@@ -1,0 +1,22 @@
+[{
+"dishes":
+{
+    "id": 3,
+    "nombre": "Tacos al Pastor",
+    "image": "https://example.com/images/tacos_al_pastor.png",
+    "descripcion": "Tacos de cerdo marinado, cebolla, cilantro y piña.",
+    "isGlutenFree":false,
+    "isVegan": false,
+    "categoria": ["entrante", "principales", "ensaladas", "pizzas", "hamburguesas"],
+    "categoriaMenu": ["Primeros", "Segundos", "Postres"],
+    "precio": 10.00,
+    "rating": 5,
+    "menuId": null
+},
+"menus":
+{
+    "id": 1,
+    "nombre": "infantil",
+    "precio": "15€"
+}
+}]
