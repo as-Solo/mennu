@@ -1,5 +1,7 @@
-[
-    {
+
+   {
+    "dishes":
+    [{
       "id": 1,
       "nombre": "Tacos al Pastor",
       "image": "https://www.seriouseats.com/thmb/lfQ2FdpR6_KrQg5Y69ZUnKUHL6o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210719-tacos-al-pastor-vicky-wasik-seriouseats-5-e3a4370541744a91b8a74d1911a198cd.jpg",
@@ -417,8 +419,11 @@
       "precio": 7.00,
       "rating": 4.8,
       "menuId": null
-    }
-  ]
-
-
-  
+    }],
+    "menus":[
+    {
+      "id": 1,
+      "nombre": "infantil",
+      "precio": "15€"
+    }] 
+}
