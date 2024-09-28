@@ -1,8 +1,10 @@
 
 
-function DishDetail() {
+function DishDetail(props) {
+
+  
   return (
-    <div>DishDetail</div>
+    <div></div>
   )
 }
 

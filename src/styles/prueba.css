@@ -1,0 +1,56 @@
+#root{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.Navbar{
+	height: 50px;
+	width: 100%;
+	padding: 20px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(240, 240, 242);
+	/* background-color: transparent; */
+	position: fixed;
+}
+
+.Navbar img{
+	height: 30px;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.categoria-container{
+	display: flex;
+	flex-direction: column;
+}
+
+.ficha{
+	display: flex;
+	flex-direction: column;
+	width: 150px;
+	/* border: 1px solid red; */
+	}
+	
+.ficha img{
+	border-radius: 5px;
+	border: 2px solid rgb(125, 140, 42);
+}
+
+.carrusel{
+	display: flex;
+	font-size: .5rem;
+	gap: 10px;
+	overflow-x: auto;
+	padding: 5px 0;
+	width: 95%;
+	align-self: center;
+	justify-content: flex-start;
+	align-items: center;
+}
