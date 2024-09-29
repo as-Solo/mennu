@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 
@@ -9,19 +9,22 @@ import Menus from "./pages/Menus"
 import MenuDetail from "./pages/MenuDetail"
 import DishDetail from "./pages/DishDetail"
 import AddMenuForm from "./pages/AddMenuForm"
+import AddDishForm from "./pages/AddDishForm"
 
 function App() {
 
   return (
     <>
       <Navbar/>
+      <div style={{margin:"47px", border:"1px solid red"}}></div>
       <Routes>
         <Route path={'/'} element={<Home/>}/>
         <Route path={'/dishes'} element={<Dishes/>}/>
         <Route path={'/menus'} element={ <Menus/> }/>
-        <Route path={'/menus/menu-detail/:id'} element={ <MenuDetail/> }/>
-        <Route path={'/dishes/dish-detail/:id'} element={ <DishDetail/> }/>
+        <Route path={'/menus/menu-detail/:menuId'} element={ <MenuDetail/> }/>
+        <Route path={'/dishes/dish-detail/:dishId'} element={ <DishDetail/> }/>
         <Route path={'/add-menu'} element={ <AddMenuForm/> }/>
+        <Route path={'/add-dish'} element={ <AddDishForm/> }/>
       </Routes>
     </>
   )

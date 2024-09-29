@@ -1,21 +1,52 @@
-
-import dataPrueba from "../../data/mennu_data.json"
 import DishCard from "../components/DishCard"
-import DishDetail from "./DishDetail"
 import fotoLanding from "../assets/foto-comida.avif"
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 function Home() {
 
-  const data = dataPrueba
-  console.log(data.dishes)
-  const entrantes = data.dishes.filter(elem=>elem.categoria.toLowerCase()==="entrantes")
-  const carnes = data.dishes.filter(elem=>elem.categoria.toLowerCase()==="carnes")
-  const pescados = data.dishes.filter(elem=>elem.categoria.toLowerCase()==="pescados")
-  const ensaladas = data.dishes.filter(elem=>elem.categoria.toLowerCase()==="ensaladas")
-  const pizzas = data.dishes.filter(elem=>elem.categoria.toLowerCase()==="pizzas")
-  const hamburguesas = data.dishes.filter(elem=>elem.categoria.toLowerCase()==="hamburguesas")
-  const postres = data.dishes.filter(elem=>elem.categoria.toLowerCase()==="postres")
+  // lo suyo seria hacer un state por cada categoria y gestionar cada lista con su propio set, de manera que cuando se modifique algo, solo se haga
+  // una llamada parcial de datos y solo se actualice el carrusel donde ha habido cambios.
+  // no se me ocurre como hacerlo escalable para poder hacer lo mismo pero con un numero de categorias n.
+  // el getData con parametro category, y que el useEffect llame a todas las categorias, pero luego solo se tendria que llamar a la categoria correspondiente??
+  const [data, setData] = useState(null)
+
+  const [entrantes, setEntrantes] = useState(null)
+  const [carnes, setCarnes] = useState(null)
+  const [pescados, setPescados] = useState(null)
+  const [ensaladas, setEnsaladas] = useState(null)
+  const [pizzas, setPizzas] = useState(null)
+  const [hamburguesas, setHamburguesas] = useState(null)
+  const [postres, setPostres] = useState(null)
+
+  const getData = async()=>{
+    const response = await axios.get("http://localhost:5000/dishes")
+    const dishes = response.data
+    setEntrantes(dishes.filter(elem=>elem.categoria.toLowerCase()==="entrantes"))
+    setCarnes(dishes.filter(elem=>elem.categoria.toLowerCase()==="carnes"))
+    setPescados(dishes.filter(elem=>elem.categoria.toLowerCase()==="pescados"))
+    setEnsaladas(dishes.filter(elem=>elem.categoria.toLowerCase()==="ensaladas"))
+    setPizzas(dishes.filter(elem=>elem.categoria.toLowerCase()==="pizzas"))
+    setHamburguesas(dishes.filter(elem=>elem.categoria.toLowerCase()==="hamburguesas"))
+    setPostres(dishes.filter(elem=>elem.categoria.toLowerCase()==="postres"))
+    setData(dishes)
+    // console.log(data)
+  }
+  useEffect(()=>{
+    getData()
+    console.log(data)
+    return ()=>{}
+  }, [])
   
+
+  if(data === null || entrantes === null || carnes === null || pescados === null || ensaladas === null || pizzas === null || hamburguesas === null || postres === null){
+
+    return (
+    <>
+      <h1 style={{backgroundColor:"black"}}>...loading  request</h1>
+    </>
+    )
+  }
   return (
 
     <div>
@@ -28,7 +59,7 @@ function Home() {
         <div className="carrusel">
           {entrantes.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id}/>
+              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -39,7 +70,7 @@ function Home() {
         <div className="carrusel">
           {carnes.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id}/>
+              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -50,7 +81,7 @@ function Home() {
         <div className="carrusel">
           {pescados.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id}/>
+              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -61,7 +92,7 @@ function Home() {
         <div className="carrusel">
           {ensaladas.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id}/>
+              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -72,7 +103,7 @@ function Home() {
         <div className="carrusel">
           {pizzas.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id}/>
+              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -83,7 +114,7 @@ function Home() {
         <div className="carrusel">
           {hamburguesas.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id}/>
+              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -94,7 +125,7 @@ function Home() {
         <div className="carrusel">
           {postres.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id}/>
+              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
           )})}
         </div>
       </div>
