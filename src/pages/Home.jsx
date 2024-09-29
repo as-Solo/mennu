@@ -19,7 +19,7 @@ function Home() {
   const [hamburguesas, setHamburguesas] = useState(null)
   const [postres, setPostres] = useState(null)
 
-  const getData = async()=>{
+  const getRows = async()=>{
     const response = await axios.get("http://localhost:5000/dishes")
     const dishes = response.data
     setEntrantes(dishes.filter(elem=>elem.categoria.toLowerCase()==="entrantes"))
@@ -33,7 +33,7 @@ function Home() {
     // console.log(data)
   }
   useEffect(()=>{
-    getData()
+    getRows()
     console.log(data)
     return ()=>{}
   }, [])
@@ -59,7 +59,7 @@ function Home() {
         <div className="carrusel">
           {entrantes.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
+              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -70,7 +70,7 @@ function Home() {
         <div className="carrusel">
           {carnes.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
+              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -81,7 +81,7 @@ function Home() {
         <div className="carrusel">
           {pescados.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
+              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -92,7 +92,7 @@ function Home() {
         <div className="carrusel">
           {ensaladas.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
+              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -103,7 +103,7 @@ function Home() {
         <div className="carrusel">
           {pizzas.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
+              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -114,7 +114,7 @@ function Home() {
         <div className="carrusel">
           {hamburguesas.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
+              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
           )})}
         </div>
       </div>
@@ -125,7 +125,7 @@ function Home() {
         <div className="carrusel">
           {postres.map(dish=>{
             return (
-              <DishCard dish={dish} key={dish.id} getData={getData} data={data} setData={setData}/>
+              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
           )})}
         </div>
       </div>

@@ -10,9 +10,19 @@ import MenuDetail from "./pages/MenuDetail"
 import DishDetail from "./pages/DishDetail"
 import AddMenuForm from "./pages/AddMenuForm"
 import AddDishForm from "./pages/AddDishForm"
+import { useState } from 'react';
 
 function App() {
+  // // creo que esto no es necesario si se estructura bien el codigo usando apis, lo dejo por si acaso.
+  // const [dishes, setDishes] = useState([])
+  // const [menus, setMenus] = useState([])
 
+  // const getData = async()=>{
+  //   const responseMenus = await axios.get("http://localhost:5000/menus")
+  //   const responseDishes = await axios.get("http://localhost:5000/dishes")
+  //   setDishes(responseDishes.data)
+  //   setMenus(responseMenus.data)
+  // }
   return (
     <>
       <Navbar/>

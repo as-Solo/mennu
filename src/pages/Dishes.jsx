@@ -10,7 +10,9 @@ function Dishes() {
   const [data, setData] = useState(null)
   const[query, setQuery] = useState('http://localhost:5000/dishes')
   const [filters, setFilters] = useState({nombre:'', descripcion:'', categoria:'', categoriaMenu:'', isGlutenFree:null, isVegan:null, precio:0, rating:0})
-  const [variantes, setVariantes] = useState({precioVar:'', ratingVar:'', isAscendant:null})
+  const [variantes, setVariantes] = useState({precioVar:'', ratingVar:''})
+  const [ascendant, setAscendant] = useState(true)
+  const [orderBy, setOrderBy] = useState('nombre')
   const [isTyping, setIsTyping] = useState(null)
 
   const createQuery = ()=>{
@@ -39,6 +41,9 @@ function Dishes() {
     if (filters.rating && filters.rating !== '0' && variantes.ratingVar){
       queryStr += `&rating${variantes.ratingVar}${filters.rating}`
     }
+    if(orderBy){
+      queryStr += `&_sort=${orderBy}&_order=${ascendant?'asc':'desc'}`
+    }
     // console.log(queryStr)
     setQuery(queryStr)
   }
@@ -55,6 +60,17 @@ function Dishes() {
     let clone = structuredClone(variantes)
     clone[e.target.name] = e.target.value
     setVariantes(clone)
+  }
+
+  const handleInputsAscDesc = (e)=>{
+    // console.log(e.target.checked)
+    setAscendant(e.target.checked)
+  }
+
+  const handleInputsOrder = (e)=>{
+    e.preventDefault()
+    console.log(e.target.value)
+    setOrderBy(e.target.value)
   }
 
   const handleInputsText = (e)=>{
@@ -77,7 +93,7 @@ function Dishes() {
 
   useEffect(() => {
     createQuery();
-  }, [filters, variantes]);
+  }, [filters, variantes, orderBy, ascendant]);
 
   useEffect(()=>{
     getData()
@@ -117,7 +133,7 @@ function Dishes() {
           <option value="_gte=">Mayor que</option>
           <option value="_lte=">Menor que</option>
         </select>
-        <input onChange={(e)=>handleInputsText(e)} type="number" name="precio"/>
+        <input onChange={(e)=>handleInputsText(e)} type="number" name="precio" min={0}/>
         <hr />
         <label htmlFor="rating">Rating</label>
         <select onChange={(e)=>handleInputsVariantes(e)} name="ratingVar" id="">
@@ -126,7 +142,7 @@ function Dishes() {
           <option value="_gte=">Mayor que</option>
           <option value="_lte=">Menor que</option>
         </select>
-        <input onChange={(e)=>handleInputsText(e)} type="number" name="rating"/>
+        <input onChange={(e)=>handleInputsText(e)} type="number" name="rating" min={0}/>
         <hr />
         <select onChange={(e)=>handleInputs(e)} name="categoria" id="">
           <option value={''}>-- Todos --</option>
@@ -137,7 +153,6 @@ function Dishes() {
           <option value="pizzas">Pizzas</option>
           <option value="hamburguesas">Hamburguesas</option>
           <option value="postres">Postres</option>
-          <option value="entrantes">Entrantes</option>
         </select>
         <hr />
         <select onChange={(e)=>handleInputs(e)} name="categoriaMenu" id="">
@@ -147,7 +162,17 @@ function Dishes() {
           <option value="postres">Postres</option>
         </select>
         <hr />
-        <input onChange={(e)=>handleInputs(e)} type="checkbox" name="isAscendant"/>
+        <select onChange={(e)=>handleInputsOrder(e)} name="orderBy" id="" value={orderBy}>
+          <option value="nombre">Nombre</option>
+          <option value="descripcion">Descripcion</option>
+          <option value="isVegan">Veganos</option>
+          <option value="isGlutenFree">Sin gluten</option>
+          <option value="categoria">Categoría</option>
+          <option value="categoriaMenu">Categoría de menu</option>
+          <option value="precio">Precio</option>
+          <option value="rating">Puntuacion</option>
+        </select>
+        <input onChange={(e)=>handleInputsAscDesc(e)} type="checkbox" name="isAscendant" value={ascendant}/>
       </div>
 
       <div style={{color:'black', display:"flex", flexWrap:"wrap", gap:"20px"}}>
@@ -157,7 +182,7 @@ function Dishes() {
           )
         })}
       </div>
-      <button onClick={(e)=>redirect('/add-dish')} style={{alignSelf:"center"}}>ADD DISH</button>
+      <button onClick={()=>redirect('/add-dish')} style={{alignSelf:"center"}}>ADD DISH</button>
     </div>
   )
 }
