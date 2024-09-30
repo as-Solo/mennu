@@ -2,6 +2,9 @@ import DishCard from "../components/DishCard"
 import fotoLanding from "../assets/foto-comida.avif"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import Carousel from 'react-bootstrap/Carousel';
+ 
+
 
 function Home() {
 
@@ -37,9 +40,10 @@ function Home() {
     console.log(data)
     return ()=>{}
   }, [])
-  
+
 
   if(data === null || entrantes === null || carnes === null || pescados === null || ensaladas === null || pizzas === null || hamburguesas === null || postres === null){
+
 
     return (
     <>
@@ -53,82 +57,95 @@ function Home() {
       <div style={{backgroundColor:"black"}}>
         <img src={fotoLanding} alt="foto-comida" style={{width:"60%", objectFit:"cover", objectPosition:"left"}}/>
       </div>
-      <div className="categoria-container">
+
+      <div className="categoria-container verde">
         <h1>Entrantes</h1>
         <hr />
-        <div className="carrusel">
-          {entrantes.map(dish=>{
-            return (
-              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
-          )})}
-        </div>
-      </div>
 
-      <div className="categoria-container">
+        <Carousel>
+        {entrantes.map(dish => (
+          <Carousel.Item key={dish.id}>
+           <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+
+    </div>
+
+      <div className="categoria-container amarillo">
         <h1>Carnes</h1>
         <hr />
-        <div className="carrusel">
-          {carnes.map(dish=>{
-            return (
-              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
-          )})}
-        </div>
+        <Carousel>
+        {carnes.map(dish => (
+          <Carousel.Item key={dish.id}>
+           <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
+          </Carousel.Item>
+        ))}
+      </Carousel>
       </div>
 
-      <div className="categoria-container">
+      <div className="categoria-container verde">
         <h1>Pescados</h1>
         <hr />
-        <div className="carrusel">
-          {pescados.map(dish=>{
-            return (
-              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
-          )})}
-        </div>
+        <Carousel>
+        {pescados.map(dish => (
+          <Carousel.Item key={dish.id}>
+           <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+
+       
       </div>
 
-      <div className="categoria-container">
+      <div className="categoria-container amarillo">
         <h1>Ensaladas</h1>
         <hr />
-        <div className="carrusel">
-          {ensaladas.map(dish=>{
-            return (
-              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
-          )})}
-        </div>
+        <Carousel>
+        {ensaladas.map(dish => (
+          <Carousel.Item key={dish.id}>
+           <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+
       </div>
 
-      <div className="categoria-container">
+      <div className="categoria-container verde">
         <h1>Pizzas</h1>
         <hr />
-        <div className="carrusel">
-          {pizzas.map(dish=>{
-            return (
-              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
-          )})}
-        </div>
+        <Carousel>
+        {pizzas.map(dish => (
+          <Carousel.Item key={dish.id}>
+           <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
+          </Carousel.Item>
+        ))}
+      </Carousel>
       </div>
       
-      <div className="categoria-container">
+      <div className="categoria-container amarillo">
         <h1>Hamburguesas</h1>
         <hr />
-        <div className="carrusel">
-          {hamburguesas.map(dish=>{
-            return (
-              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
-          )})}
-        </div>
+        <Carousel>
+        {hamburguesas.map(dish => (
+          <Carousel.Item key={dish.id}>
+           <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
+          </Carousel.Item>
+        ))}
+      </Carousel>
       </div>
 
-      <div className="categoria-container">
+      <div className="categoria-container verde">
         <h1>Postres</h1>
         <hr />
-        <div className="carrusel">
-          {postres.map(dish=>{
-            return (
-              <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
-          )})}
-        </div>
-      </div>
+        <Carousel>
+        {postres.map(dish => (
+          <Carousel.Item key={dish.id}>
+           <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+      </div> 
       
     </div>
  

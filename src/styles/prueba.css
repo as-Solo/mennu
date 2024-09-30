@@ -60,7 +60,7 @@
 	border: 2px solid rgb(125, 140, 42);
 }
 
-.carrusel{
+/* .carrusel{
 	display: flex;
 	font-size: .5rem;
 	gap: 10px;
@@ -70,7 +70,7 @@
 	align-self: center;
 	justify-content: flex-start;
 	align-items: center;
-}
+} */
 
 button{
     border-radius: 20px;
