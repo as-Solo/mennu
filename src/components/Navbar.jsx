@@ -2,7 +2,7 @@ import menuHamb from "../assets/menu_hamburguesa.png"
 import logoTeja from "../assets/logo_mennu_teja.png"
 // import logoAmarillo from "../assets/logo_mennu_amarillo.png"
 import "../styles/prueba.css"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 function Navbar() {
   const redirect = useNavigate()
@@ -10,7 +10,11 @@ function Navbar() {
     <div className="navbar-container">
       <div className="Navbar">
         {/* <img src={logoAmarillo} alt="" /> */}
+        <Link
+        to={"/"}>
         <img src={logoTeja} alt="" />
+
+        </Link>
         <img src={menuHamb} alt="" />
       </div>
       <div className="navbar-botonera">

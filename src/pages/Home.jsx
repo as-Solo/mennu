@@ -37,7 +37,7 @@ function Home() {
   }
   useEffect(()=>{
     getRows()
-    console.log(data)
+
     return ()=>{}
   }, [])
 
@@ -59,7 +59,7 @@ function Home() {
       </div>
 
       <div className="categoria-container verde">
-        <h1>Entrantes</h1>
+        <h1 className="amarillo categ-title">Entrantes</h1>
         <hr />
 
         <Carousel>
@@ -73,7 +73,7 @@ function Home() {
     </div>
 
       <div className="categoria-container amarillo">
-        <h1>Carnes</h1>
+        <h1 className="verde categ-title">Carnes</h1>
         <hr />
         <Carousel>
         {carnes.map(dish => (
@@ -85,7 +85,7 @@ function Home() {
       </div>
 
       <div className="categoria-container verde">
-        <h1>Pescados</h1>
+        <h1 className="amarillo categ-title">Pescados</h1>
         <hr />
         <Carousel>
         {pescados.map(dish => (
@@ -99,7 +99,7 @@ function Home() {
       </div>
 
       <div className="categoria-container amarillo">
-        <h1>Ensaladas</h1>
+        <h1 className="verde categ-title">Ensaladas</h1>
         <hr />
         <Carousel>
         {ensaladas.map(dish => (
@@ -112,7 +112,7 @@ function Home() {
       </div>
 
       <div className="categoria-container verde">
-        <h1>Pizzas</h1>
+        <h1 className="amarillo categ-title">Pizzas</h1>
         <hr />
         <Carousel>
         {pizzas.map(dish => (
@@ -124,7 +124,7 @@ function Home() {
       </div>
       
       <div className="categoria-container amarillo">
-        <h1>Hamburguesas</h1>
+        <h1 className="verde categ-title">Hamburguesas</h1>
         <hr />
         <Carousel>
         {hamburguesas.map(dish => (
@@ -136,7 +136,7 @@ function Home() {
       </div>
 
       <div className="categoria-container verde">
-        <h1>Postres</h1>
+        <h1 className="amarillo categ-title">Postres</h1>
         <hr />
         <Carousel>
         {postres.map(dish => (

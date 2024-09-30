@@ -11,6 +11,7 @@ import DishDetail from "./pages/DishDetail"
 import AddMenuForm from "./pages/AddMenuForm"
 import AddDishForm from "./pages/AddDishForm"
 import { useState } from 'react';
+import MyNavBar from './components/MyNavBar';
 
 function App() {
   // // creo que esto no es necesario si se estructura bien el codigo usando apis, lo dejo por si acaso.
@@ -25,8 +26,13 @@ function App() {
   // }
   return (
     <>
+<<<<<<< HEAD
+      <MyNavBar/>
+     {/*  <div style={{margin:"47px", border:"1px solid red"}}></div> */}
+=======
       <Navbar/>
       <div style={{margin:"60px", border:"1px solid red"}}></div>
+>>>>>>> 37a1094a01f736d98983c1f67388189048307b52
       <Routes>
         <Route path={'/'} element={<Home/>}/>
         <Route path={'/dishes'} element={<Dishes/>}/>

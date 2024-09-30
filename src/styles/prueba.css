@@ -4,15 +4,15 @@
 	width: 100%;
 }
 
-.navbar-container{
+/* .navbar-container{
 	width: 100%;
 	position: fixed;
 	z-index: 30;
 	background-color: rgb(240, 240, 242);
-	padding: 10px 30px 0;
-}
+	padding: 10px 30px 10px;
+} */
 
-.navbar-botonera{
+/* .navbar-botonera{
 	display: flex;
 	width: 100%;
 	justify-content: center;
@@ -21,21 +21,20 @@
 	background-color: rgb(74, 42, 24);
 	padding: 6px;
 
-}
+} */
 
-.Navbar{
-	height: 50px;
+/* .Navbar{
+	height: 10vh;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	/* background-color: transparent; */
-	
-}
-
-.Navbar img{
+/*}
+ */
+/* .Navbar img{
 	height: 30px;
-}
+} */
 
 *{
 	margin: 0;

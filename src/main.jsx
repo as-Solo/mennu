@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import './styles/Home.css'
 import './styles/DishCard.css'
+import './styles/NavBarStyle.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 
