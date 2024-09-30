@@ -1,0 +1,144 @@
+.ficha-item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: solid 1px rgb(125, 140, 42);
+    border-radius: 15px;
+    padding: 3px;
+}
+
+.item-movil-content{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.item-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    aspect-ratio: 1/1;
+    height: 100%;
+    max-height: 115px;
+}
+
+.item-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    border: solid  rgba(231, 164, 69, 0.61);
+    border-width: 0 2px 2px 0;
+    /* box-shadow: 1px 1px 3px rgb(231, 164, 69); */
+}
+
+.item-datos-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 50%;
+    
+}
+
+.item-nombre{
+    font-size: calc(.9rem + 0.7vw);
+    font-weight: 700;
+    line-height: 1.15rem;
+    margin-top: 9px;
+}
+
+.item-iconos{
+    display: flex;
+    font-size: .6rem;
+    gap: 5px;
+}
+.item-icono-img{
+    width: 8%;
+}
+
+.item-cabecera{
+    display: flex;
+    gap: 5px;
+    width: 100%;
+}
+.item-categoria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-weight: 600;
+    color: white;
+    padding: 0 10px;
+	background-color: rgb(125, 140, 42);
+    font-size: .65rem;
+}
+
+.item-stars-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(231, 164, 69);
+    border-radius: 30px;
+    position: relative;
+    width: 90px;
+}
+
+.item-precio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-weight: 700;
+    color: white;
+    padding: 0 10px;
+	background-color: rgb(231, 164, 69);
+    font-size: .65rem;
+    margin: 5px 0;
+}
+.item-precio span{
+    font-size: .5rem;
+}
+
+.item-star{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.item-star img{
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.star-empty{
+    z-index: 5;
+}
+
+.star-fill{
+    z-index: 10;
+}
+
+.separador{
+    width: 95%;
+    border: none;
+    height: 1px;
+    background-color: rgba(72, 42, 24, 0.438);
+    margin: 3px 0 3px;
+}
+.descripcion-container{
+    padding: 2px 10px;
+    font-style:italic;
+    font-size: calc(.6rem + 1.1vw);
+    display: none;
+}
+
+.sep-2{
+    margin: 10px 0 5px;
+}
+
