@@ -20,7 +20,7 @@ function Home() {
   const [postres, setPostres] = useState(null)
 
   const getRows = async()=>{
-    const response = await axios.get("http://localhost:5000/dishes")
+    const response = await axios.get("http://localhost:5005/dishes")
     const dishes = response.data
     setEntrantes(dishes.filter(elem=>elem.categoria.toLowerCase()==="entrantes"))
     setCarnes(dishes.filter(elem=>elem.categoria.toLowerCase()==="carnes"))

@@ -28,7 +28,7 @@ const redirect = useNavigate()
 
 
   const getMenuInfo = async()=>{
-    const response = await axios.get("http://localhost:5000/menus")
+    const response = await axios.get("http://localhost:5005/menus")
     // console.log(response.data)
     let menu = []
     for (let elem of response.data){
@@ -39,7 +39,7 @@ const redirect = useNavigate()
   }
 
   const getCategorias = async()=>{
-    const response = await axios.get("http://localhost:5000/dishes")
+    const response = await axios.get("http://localhost:5005/dishes")
     const categories = response.data.reduce((lista, elem)=>{
       if (!lista.includes(elem.categoria)){
         lista.push(elem.categoria)

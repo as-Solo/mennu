@@ -18,28 +18,28 @@ function AddMenuForm() {
 
   // ------------------  PETICIONES A LA API  -------------------
   const getPrimeros = async ()=>{
-    const response = await axios.get(`http://localhost:5000/dishes?categoriaMenu=primeros&menuId=0`)
+    const response = await axios.get(`http://localhost:5005/dishes?categoriaMenu=primeros&menuId=0`)
     setPrimeros(response.data)
   }
   const getSegundos = async ()=>{
-    const response = await axios.get(`http://localhost:5000/dishes?categoriaMenu=segundos&menuId=0`)
+    const response = await axios.get(`http://localhost:5005/dishes?categoriaMenu=segundos&menuId=0`)
     setSegundos(response.data)
   }
   const getPostres = async ()=>{
-    const response = await axios.get(`http://localhost:5000/dishes?categoriaMenu=postres&menuId=0`)
+    const response = await axios.get(`http://localhost:5005/dishes?categoriaMenu=postres&menuId=0`)
     setPostres(response.data)
   }
 
   const getPrimerosInclude = async ()=>{
-    const response = await axios.get(`http://localhost:5000/dishes?categoriaMenu=primeros&menuId=-1`)
+    const response = await axios.get(`http://localhost:5005/dishes?categoriaMenu=primeros&menuId=-1`)
     setPrimerosInclude(response.data)
   }
   const getSegundosInclude = async ()=>{
-    const response = await axios.get(`http://localhost:5000/dishes?categoriaMenu=segundos&menuId=-1`)
+    const response = await axios.get(`http://localhost:5005/dishes?categoriaMenu=segundos&menuId=-1`)
     setSegundosInclude(response.data)
   }
   const getPostresInclude = async ()=>{
-    const response = await axios.get(`http://localhost:5000/dishes?categoriaMenu=postres&menuId=-1`)
+    const response = await axios.get(`http://localhost:5005/dishes?categoriaMenu=postres&menuId=-1`)
     setPostresInclude(response.data)
   }
 

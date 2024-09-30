@@ -8,7 +8,7 @@ import "../styles/prueba.css"
 function Dishes() {
   const redirect = useNavigate()
   const [data, setData] = useState(null)
-  const[query, setQuery] = useState('http://localhost:5000/dishes')
+  const[query, setQuery] = useState('http://localhost:5005/dishes')
   const [filters, setFilters] = useState({nombre:'', descripcion:'', categoria:'', categoriaMenu:'', isGlutenFree:null, isVegan:null, precio:0, rating:0})
   const [variantes, setVariantes] = useState({precioVar:'', ratingVar:''})
   const [ascendant, setAscendant] = useState(true)
@@ -16,7 +16,7 @@ function Dishes() {
   const [isTyping, setIsTyping] = useState(null)
 
   const createQuery = ()=>{
-    let queryStr = 'http://localhost:5000/dishes?';
+    let queryStr = 'http://localhost:5005/dishes?';
     if (filters.nombre){
       queryStr += `&nombre_like=${filters.nombre}`
     }

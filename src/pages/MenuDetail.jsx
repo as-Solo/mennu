@@ -11,7 +11,7 @@ function MenuDetail() {
   console.log(menuId)
 
   const getData = async ()=>{
-    const response = await axios.get(`http://localhost:5000/menus/${menuId}?_embed=dishes`)
+    const response = await axios.get(`http://localhost:5005/menus/${menuId}?_embed=dishes`)
     console.log(response.data)
     setMenu(response.data)
   }
