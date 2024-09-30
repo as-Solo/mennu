@@ -1,0 +1,44 @@
+.verde {
+  background-color: rgb(125,140,42) ;
+  color:white;
+
+}
+
+.amarillo {
+  background-color: rgb(231,164,69) ;
+  color:white;
+
+
+  }
+  .categoria-container {
+    margin: 0;
+
+  }
+  .categoria-container h1{
+    text-align: center;
+    padding:10px;
+    margin:0;
+    font-weight: 700;
+    
+  }
+
+  hr {
+
+    margin: 0;
+  }
+
+
+
+@media (min-width: 1024px) {
+  .categoria-container {
+    margin:25px;
+    border-radius: 20px;
+
+  }
+  .categoria-container h1{
+    text-align: left;
+    padding: 10px 0;
+    margin-left: 10vw;
+
+  }
+}
