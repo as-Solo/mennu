@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import DishCard from "../components/DishCard"
+import DishCardItem from "../components/DishCardItem"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import "../styles/prueba.css"
@@ -106,7 +106,7 @@ function Dishes() {
   }
   
   return (
-    <div style={{display:"flex", flexDirection:"column", gap:"40px", padding:"50px 40px"}}>
+    <div style={{display:"flex", flexDirection:"column", gap:"40px", width:"100%"}}>
       <div style={{display:"flex", gap:"10px", flexWrap:"wrap"}}>
         <label htmlFor="nombre">Nombre</label>
         <input onChange={(e)=>handleInputsText(e)} type="text" name="nombre"/>
@@ -175,10 +175,10 @@ function Dishes() {
         <input onChange={(e)=>handleInputsAscDesc(e)} type="checkbox" name="isAscendant" value={ascendant}/>
       </div>
 
-      <div style={{color:'black', display:"flex", flexWrap:"wrap", gap:"20px"}}>
+      <div style={{display:"flex", flexDirection:"column", gap:"15px", width:"100%", padding:"0 30px"}}>
         {data.map(dish=>{
           return(
-            <DishCard key={dish.id} dish={dish}/>
+            <DishCardItem key={dish.id} dish={dish}/>
           )
         })}
       </div>
