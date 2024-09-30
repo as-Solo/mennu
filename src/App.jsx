@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <div style={{margin:"47px", border:"1px solid red"}}></div>
+      <div style={{margin:"60px", border:"1px solid red"}}></div>
       <Routes>
         <Route path={'/'} element={<Home/>}/>
         <Route path={'/dishes'} element={<Dishes/>}/>

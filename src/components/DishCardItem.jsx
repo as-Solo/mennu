@@ -30,6 +30,7 @@ function DishCardItem(props) {
               </div>
               <p className='item-nombre'> {dish.nombre}</p>
               <hr className='separador'/>
+              <p className="item-descripcion-web"> {dish.descripcion}</p>
               <div className='item-iconos'>
                 {/* <img className={"item-icono-img"} src={dish.isGlutenFree?glutenFree:noGlutenFree} alt="" />
                 <img className={"item-icono-img"} src={dish.isVegan?vegan:noVegan} alt="" /> */}
