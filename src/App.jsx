@@ -26,13 +26,8 @@ function App() {
   // }
   return (
     <>
-<<<<<<< HEAD
       <MyNavBar/>
      {/*  <div style={{margin:"47px", border:"1px solid red"}}></div> */}
-=======
-      <Navbar/>
-      <div style={{margin:"60px", border:"1px solid red"}}></div>
->>>>>>> 37a1094a01f736d98983c1f67388189048307b52
       <Routes>
         <Route path={'/'} element={<Home/>}/>
         <Route path={'/dishes'} element={<Dishes/>}/>

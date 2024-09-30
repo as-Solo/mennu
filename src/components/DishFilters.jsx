@@ -5,15 +5,15 @@ function DishFilters(props) {
 
   const {handleInputsText, handleInputs, handleInputsVariantes, handleInputsOrder, handleInputsAscDesc, orderBy, ascendant, filters} = props
 
-  const [moreFilters, setMorefilters] = useState("86px")
+  const [moreFilters, setMorefilters] = useState("100px")
 
   const handleMoreFilters = (e)=>{
     console.log(e.target.checked)
     if (e.target.checked){
-      setMorefilters("205px")
+      setMorefilters("222px")
     }
     else{
-      setMorefilters("86px")
+      setMorefilters("100px")
     }
   }
   console.log(moreFilters)
@@ -24,7 +24,7 @@ function DishFilters(props) {
     padding: "0 10px 0 4px",
     }
   return (
-    <div className="dishes-form" style={{ height:`${moreFilters}`, display:"flex", gap:"15px", flexWrap:"wrap", alignContent:"flex-start", alignItems:"flex-start", padding:"13px 50px 13px 20px", justifyContent:"center", position:"relative", maxWidth:"1200px" }}>
+    <div className="dishes-form" style={{ height:`${moreFilters}`, display:"flex", gap:"16px", flexWrap:"wrap", alignContent:"flex-start", alignItems:"flex-start", justifyContent:"center", position:"relative", maxWidth:"1200px" }}>
         <div style={{display:"flex", gap:"10px"}}> {/*, justifyContent:"center", width:"100%" */}
           <div className="form-input-text-container">
             <label className="form-label-text" htmlFor="nombre" style={filters.nombre ? labelStyle : {}}>Nombre</label>
@@ -110,7 +110,7 @@ function DishFilters(props) {
           </select>
           <input onChange={(e)=>handleInputsAscDesc(e)} type="checkbox" name="isAscendant" value={ascendant}/>
         </div>
-        <input className="show-more-filters" onChange={(e)=>handleMoreFilters(e)} type="checkbox" style={{position:"absolute", top:"20px", right:"20px"}}/>
+        <input className="show-more-filters" onChange={(e)=>handleMoreFilters(e)} type="checkbox" style={{position:"absolute", top:"32px", right:"20px"}}/>
         
       </div>
   )

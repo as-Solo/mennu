@@ -12,6 +12,7 @@
     /* height: 32px;
     height: 43px; */
     /* height: 190px; */
+    padding: 25px 50px 13px 20px;
     transition: all .3s ease;
 }
 
@@ -126,6 +127,6 @@
         display: none;
     }
     .dishes-form{
-        padding: 13px 20px;
+        padding: 26px 20px;
     }
 }
