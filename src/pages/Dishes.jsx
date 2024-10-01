@@ -2,7 +2,8 @@ import { useEffect, useState } from "react"
 import DishCardItem from "../components/DishCardItem"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import "../styles/prueba.css"
+// import "../styles/prueba.css"
+import "../styles/Dishes.css"
 import DishFilters from "../components/DishFilters"
 
 
@@ -101,6 +102,9 @@ function Dishes() {
     return ()=>{}
   }, [query])
 
+  useEffect(()=>{
+    return ()=>{}
+  }, [])
   const paraDishFilter = {handleInputsText, handleInputs, handleInputsVariantes, handleInputsOrder, handleInputsAscDesc, orderBy, ascendant, filters}
 
 
@@ -109,16 +113,19 @@ function Dishes() {
   }
   
   return (
-    <div style={{display:"flex", flexDirection:"column", gap:"10px", width:"100%", alignItems:"center"}}>
+    <div className="dishes-container">
       <DishFilters {...paraDishFilter}/>
-      <div style={{display:"flex", flexDirection:"column", gap:"15px", width:"100%", padding:"0 30px", maxWidth:"1200px", margin:"auto"}}>
-        {data.map(dish=>{
-          return(
-            <DishCardItem key={dish.id} dish={dish}/>
-          )
-        })}
+      <div className="centradito">
+        <div className="dishes-fichas-container">
+          {data.map(dish=>{
+            return(
+              <DishCardItem key={dish.id} dish={dish}/>
+            )
+          })}
+        </div>
+        <button className="dishes-add-dish" onClick={()=>redirect('/add-dish')}>ADD DISH</button>
+        <div className="dishes-pastilla-footer"></div>
       </div>
-      <button onClick={()=>redirect('/add-dish')} style={{alignSelf:"center"}}>ADD DISH</button>
     </div>
   )
 }

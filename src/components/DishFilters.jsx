@@ -1,20 +1,44 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "../styles/DishFilters.css"
 
 function DishFilters(props) {
 
   const {handleInputsText, handleInputs, handleInputsVariantes, handleInputsOrder, handleInputsAscDesc, orderBy, ascendant, filters} = props
-
   const [moreFilters, setMorefilters] = useState("100px")
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [checked, setChecked] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 689){
+        setChecked(false)
+        setMorefilters("100px")
+      }
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleMoreFilters = (e)=>{
-    // console.log(e.target.checked)
+    setChecked(e.target.checked)
     if (e.target.checked){
-      setMorefilters("222px")
-    }
-    else{
-      setMorefilters("100px")
-    }
+      // console.log(screenWidth)
+      if(screenWidth >=564){
+        setMorefilters("140px")
+      }
+      else if (screenWidth >= 408){
+        setMorefilters("180px")
+      }
+      else{
+        setMorefilters("222px")
+      }
+      }
+      else{
+        setMorefilters("100px")
+      }
   }
   // console.log(moreFilters)
   const labelStyle = {fontSize: '.7rem',
@@ -25,7 +49,7 @@ function DishFilters(props) {
     }
   return (
     <div className="dishes-form" style={{ height:`${moreFilters}`, display:"flex", gap:"16px", flexWrap:"wrap", alignContent:"flex-start", alignItems:"flex-start", justifyContent:"center", position:"relative", maxWidth:"1200px" }}>
-        <div style={{display:"flex", gap:"10px"}}> {/*, justifyContent:"center", width:"100%" */}
+        <div className="cabecera-nombre-descripcion"> {/*, justifyContent:"center", width:"100%" */}
           <div className="form-input-text-container">
             <label className="form-label-text" htmlFor="nombre" style={filters.nombre ? labelStyle : {}}>Nombre</label>
             <input className="form-input-text" onChange={(e)=>handleInputsText(e)} type="text" name="nombre"/>
@@ -110,8 +134,10 @@ function DishFilters(props) {
           </select>
           <input onChange={(e)=>handleInputsAscDesc(e)} type="checkbox" name="isAscendant" value={ascendant}/>
         </div>
-        <input className="show-more-filters" onChange={(e)=>handleMoreFilters(e)} type="checkbox" style={{position:"absolute", top:"32px", right:"20px"}}/>
-        
+        <div className="boton-mas-filtros">
+          <p style={{margin:"0", padding:"0"}}>{checked?'🠉':'🠋'}</p>
+          <input className="show-more-filters" onChange={(e)=>handleMoreFilters(e)} checked={checked} type="checkbox" style={{opacity:"0", position:"absolute"}}/>
+        </div>
       </div>
   )
 }

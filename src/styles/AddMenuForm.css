@@ -1,0 +1,211 @@
+.menu-form-container *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.paleta{
+    color: rgb(231, 164, 69);
+    color: rgb(125, 140, 42);
+    color: rgb(74, 42, 24);
+    color: rgb(240, 240, 242);
+}
+
+.centradito{
+    display:flex;
+    flex-direction:column;
+    justify-content:"center";
+    align-items:center;
+}
+.menu-form-container{
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:"center";
+    align-items:center;
+    gap:30px;
+    padding-top:40px;
+    /* border: 1px solid red; */
+    overflow: hidden;
+    max-width: 1200px;
+}
+
+.menu-cabecera-nombre-precio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    /* border: 1px, solid red; */
+    width: 100%;
+    position: relative;
+
+}
+
+.menu-input-text-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    /* border: 1px, solid red; */
+
+}
+
+.menu-input-text{
+    background-color: transparent;
+    border: none;
+    border-radius: 30px;
+    border: 2px solid rgb(125, 140, 42);
+    outline: none;
+    color: rgb(74, 42, 24);
+    padding-left: 15px;
+    height: 28px;
+}
+
+.menu-input-precio{
+    width: 100px !important;
+}
+
+
+.label-flotante{
+    color: rgb(125, 140, 42);
+    font-weight: 600;
+    line-height: .8;
+    position: absolute;
+    transition: all .3s;
+    top: 8px;
+    left: 25px;
+    background-color: rgba(255, 255, 255, 0);
+    pointer-events: none;
+    z-index: 30;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.menu-input-text-container:focus-within .label-flotante{
+    font-size: .7rem;
+    left: 20px;
+    top: -4px;
+    background-color: rgb(255, 255, 255);
+    padding: 0 10px 0 4px;
+    color: rgb(231, 164, 69);
+}
+
+.menu-input-text:focus{
+    outline: none;
+    border: 2px solid rgb(231, 164, 69);
+}
+
+.ventana-platos{
+    width: 90%;
+    height: 69vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    padding: 0 10px;
+    padding-top: 17px;
+    position: relative;
+}
+.menu-categoria-container{
+    width: 100%;
+    padding: 10px;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(125, 140, 42);
+    background-color: rgba(125, 140, 42, 0.2);
+    border-radius: 30px;
+    padding-top: 13px;
+    position: relative;
+}
+
+.menu-categoria-text{
+    /* background-color: rgb(231, 164, 69); */
+    background: linear-gradient(to top, #e5e8d4 50%, white 50%);
+    border-radius: 30px;
+    color: rgb(74, 42, 24);
+    padding: 0px 14px 0 8px;
+    position: absolute;
+    font-weight: 800;
+    top: -13px;
+    left: 32px;
+    z-index: 20px;
+}
+
+.fade-up{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    bottom: -52px;
+    z-index: 50;
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+}
+
+.menu-selector-platos{
+    /* border-radius: 30px; */
+    border: none;
+    border-bottom: solid 2px rgb(231, 164, 69);
+    background-color: transparent;
+    color: rgb(231, 164, 69);
+    font-weight: 500;
+    outline: none;
+}
+
+.ultima-categoria{
+    margin-bottom: 70px;
+}
+.platos-incluidos{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgb(74, 42, 24);
+    font-style: italic;
+}
+
+
+.ventana-platos::-webkit-scrollbar {
+    width: 4px; 
+    border: solid 10px rgba(125, 140, 42, 0);
+    margin: 20px;
+  }
+
+  .ventana-platos::-webkit-scrollbar-thumb {
+    border-radius: 10px; 
+    border: solid 6px rgb(125, 140, 42);
+  }
+  
+  .ventana-platos::-webkit-scrollbar-track {
+    background: #ff000000; 
+    border-radius: 10px; 
+  }
+
+  .boton-volver{
+    /* position: absolute; */
+    top: -20px;
+    width: 50px;
+    border-radius: 30px;
+    z-index: 60;
+  }
+
+.boton-add-menu{
+    /* position: absolute; */
+    width: 90px;
+    bottom: 12px;
+    border-radius: 30px;
+    background-color: rgb(125, 140, 42);
+    }
+
+.tope-inferior{
+    /* height: 30px; */
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    gap: 15px;
+}
