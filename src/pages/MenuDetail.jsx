@@ -1,14 +1,17 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
+
 
 
 function MenuDetail() {
 
   const [menu, setMenu] = useState(null)
   const { menuId } = useParams()
+  const redirect = useNavigate()
 
-  console.log(menuId)
+
+
 
   const getData = async ()=>{
     const response = await axios.get(`http://localhost:5005/menus/${menuId}?_embed=dishes`)
@@ -26,8 +29,10 @@ function MenuDetail() {
   }
   return (
     <div className="menu-detail">
+      <div className="redirect">
+      <button onClick={()=>redirect('/menus')}>⤺</button>
+      </div>
 
-      
       <h1>Menú {menu.nombre}</h1>
       
       

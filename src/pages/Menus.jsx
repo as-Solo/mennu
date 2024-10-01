@@ -25,7 +25,7 @@ function Menus() {
 
   // -------------------------------------------------
 
-  console.log(menus)
+
 
   if (menus === null){
     return (<h1>...loading</h1>)
