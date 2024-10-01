@@ -113,6 +113,7 @@ function Dishes() {
       <DishFilters {...paraDishFilter}/>
       <div style={{display:"flex", flexDirection:"column", gap:"15px", width:"100%", padding:"0 30px", maxWidth:"1200px", margin:"auto"}}>
         {data.map(dish=>{
+          console.log(data)
           return(
             <DishCardItem key={dish.id} dish={dish}/>
           )
