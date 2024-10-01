@@ -1,0 +1,39 @@
+.menus-container-sup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  
+
+}
+.menus-container {
+  
+}
+.menu-container{
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;  
+  background-color:rgb(125,140,42);
+
+
+  padding: 5vw;
+  border-radius: 15px;
+}
+
+.menu-container p {
+  margin:0;
+  padding: 2vw;
+  color: white;
+  text-transform: capitalize;
+}
+
+
+.menus-container-sup button {
+  border-radius: 15px;
+
+}

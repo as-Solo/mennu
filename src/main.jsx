@@ -5,6 +5,9 @@ import './index.css'
 import './styles/Home.css'
 import './styles/DishCard.css'
 import './styles/NavBarStyle.css'
+import './styles/MenuDetail.css'
+import './styles/MenusPage.css'
+
 import { BrowserRouter as Router } from 'react-router-dom'
 
 
