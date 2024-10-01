@@ -32,19 +32,26 @@ function Menus() {
   }
 
   return (
-    <div>
+    <div className="menus-container-sup">
+      <h1>Menús del Restaurante:</h1>
       {menus.map((menu)=>{
         if(menu.id !== 0){
         return(
-          <Link to={`/menus/menu-detail/${menu.id}`} key={menu.id} style={{display:"flex", width:"100%", margin:"20px 0px", justifyContent:"center",  gap:"20px", backgroundColor:"rgb(125,140,42"}}>
-            <p>{menu.nombre}</p>
+          <div  key={menu.id} className="menus-container" >
+          <Link to={`/menus/menu-detail/${menu.id}`} key={menu.id} style={{display:"flex", width:"100%", margin:"20px 0px", justifyContent:"center",  gap:"20px" }}>
+           <div className="menu-container">
+
+           <p>{menu.nombre}</p>
             <p>{menu.precio}</p>
+           </div>
+           
           </Link>
+          </div>
         )
       }
       })}
       <Link to={'/add-menu'}>
-        <button>CREATE</button>
+        <button>Crear un nuevo Menú</button>
       </Link>
     </div>
   )
