@@ -14,7 +14,7 @@ function Menus() {
   // ------------  PETICIONES A LA API  --------------
 
   const getData = async ()=>{
-    const response = await axios.get("http://localhost:5005/menus")
+    const response = await axios.get("http://localhost:5005/menus?_embed=dishes")
     setMenus(response.data)
   }
 
