@@ -109,7 +109,7 @@ function Dishes() {
   }
   
   return (
-    <div style={{display:"flex", flexDirection:"column", gap:"40px", width:"100%", alignItems:"center"}}>
+    <div style={{display:"flex", flexDirection:"column", gap:"10px", width:"100%", alignItems:"center"}}>
       <DishFilters {...paraDishFilter}/>
       <div style={{display:"flex", flexDirection:"column", gap:"15px", width:"100%", padding:"0 30px", maxWidth:"1200px", margin:"auto"}}>
         {data.map(dish=>{

@@ -8,7 +8,7 @@ function DishFilters(props) {
   const [moreFilters, setMorefilters] = useState("100px")
 
   const handleMoreFilters = (e)=>{
-    console.log(e.target.checked)
+    // console.log(e.target.checked)
     if (e.target.checked){
       setMorefilters("222px")
     }
@@ -16,7 +16,7 @@ function DishFilters(props) {
       setMorefilters("100px")
     }
   }
-  console.log(moreFilters)
+  // console.log(moreFilters)
   const labelStyle = {fontSize: '.7rem',
     left: "20px",
     top: "-4px",
