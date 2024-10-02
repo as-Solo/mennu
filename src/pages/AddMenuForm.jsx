@@ -20,15 +20,15 @@ function AddMenuForm() {
 
   // ------------------  PETICIONES A LA API  -------------------
   const getPrimeros = async ()=>{
-    const response = await axios.get(`http://localhost:5005/dishes?categoriaMenu=primeros&menuId=0`)
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes?categoriaMenu=primeros&menuId=0`)
     setPrimeros(response.data)
   }
   const getSegundos = async ()=>{
-    const response = await axios.get(`http://localhost:5005/dishes?categoriaMenu=segundos&menuId=0`)
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes?categoriaMenu=segundos&menuId=0`)
     setSegundos(response.data)
   }
   const getPostres = async ()=>{
-    const response = await axios.get(`http://localhost:5005/dishes?categoriaMenu=postres&menuId=0`)
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes?categoriaMenu=postres&menuId=0`)
     setPostres(response.data)
   }
   // ------------------------------------------------------------
@@ -92,18 +92,18 @@ function AddMenuForm() {
 
   const handleAddMenu = async ()=>{
     if (newMenu.nombre && newMenu.precio){
-      const response = await axios.post("http://localhost:5005/menus", newMenu)
+      const response = await axios.post(`${import.meta.env.VITE_SERVER_URL}/menus`, newMenu)
       let id = response.data.id
       for (let elem of primerosInclude){
-        await axios.patch(`http://localhost:5005/dishes/${elem.id}`, {menuId:`${id}`})
+        await axios.patch(`${import.meta.env.VITE_SERVER_URL}/dishes/${elem.id}`, {menuId:`${id}`})
         console.log(elem)
       }
       for (let elem of segundosInclude){
-        await axios.patch(`http://localhost:5005/dishes/${elem.id}`, {menuId:`${id}`})
+        await axios.patch(`${import.meta.env.VITE_SERVER_URL}/dishes/${elem.id}`, {menuId:`${id}`})
         console.log(elem)
       }
       for (let elem of postresInclude){
-        await axios.patch(`http://localhost:5005/dishes/${elem.id}`, {menuId:`${id}`})
+        await axios.patch(`${import.meta.env.VITE_SERVER_URL}/dishes/${elem.id}`, {menuId:`${id}`})
         console.log(elem)
       }
       redirect("/menus")

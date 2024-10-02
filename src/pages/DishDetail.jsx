@@ -23,14 +23,14 @@ function DishDetail() {
 
   // -------------------- PETICIONES A API ------------------------
   const getDish = async()=>{
-    const response = await axios.get(`http://localhost:5005/dishes/${dishId}`)
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes/${dishId}`)
     // console.log(response.data)
     setDish(response.data)
     setEditDish(response.data)
   }
 
   const getCategorias = async()=>{
-    const response = await axios.get("http://localhost:5005/dishes")
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes`)
     const categories = response.data.reduce((lista, elem)=>{
       if (!lista.includes(elem.categoria)){
         lista.push(elem.categoria)
@@ -59,7 +59,7 @@ function DishDetail() {
   // ------------------------ HANDLES ------------------------------
   const handleDelete = async()=>{
     console.log(`Se ha borrado ${dish.nombre} de la carta.`)
-    await axios.delete(`http://localhost:5005/dishes/${dishId}`)
+    await axios.delete(`${import.meta.env.VITE_SERVER_URL}/dishes/${dishId}`)
     redirect('/dishes')
     setBorrando(!borrando)
   }
@@ -82,7 +82,7 @@ function DishDetail() {
   }
 
   const handleSaveChanges = async ()=>{
-    await axios.patch(`http://localhost:5005/dishes/${dish.id}`, editDish)
+    await axios.patch(`${import.meta.env.VITE_SERVER_URL}/dishes/${dish.id}`, editDish)
     setDish(editDish)
     setConfirmation(!confirmation)
     setEditando(!editando)

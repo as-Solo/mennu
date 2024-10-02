@@ -28,7 +28,7 @@ const redirect = useNavigate()
 
 
   const getMenuInfo = async()=>{
-    const response = await axios.get("http://localhost:5005/menus")
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/menus`)
     // console.log(response.data)
     let menu = []
     for (let elem of response.data){
@@ -39,7 +39,7 @@ const redirect = useNavigate()
   }
 
   const getCategorias = async()=>{
-    const response = await axios.get("http://localhost:5005/dishes")
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes`)
     const categories = response.data.reduce((lista, elem)=>{
       if (!lista.includes(elem.categoria)){
         lista.push(elem.categoria)
@@ -115,7 +115,7 @@ const handleCreate = async ()=>{
     newDish.precio && 
     newDish.rating
     ){
-    const platoNuevo = await axios.post("http://localhost:5000/dishes", newDish)
+    const platoNuevo = await axios.post(`${import.meta.env.VITE_SERVER_URL}/dishes`, newDish)
     console.log(`Se ha añadido ${platoNuevo.data.nombre} a la carta`)
     redirect(`/dishes/dish-detail/${platoNuevo.data.id}`)
     }
