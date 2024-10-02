@@ -273,7 +273,7 @@
     .dish-detail-container{
         display: flex;
         gap: 50px;
-        min-height: 550px;
+        min-height: 580px;
         padding: 20px;
     }
     .dish-detail-image-precio-flotante-container{
@@ -281,6 +281,5 @@
     }
     .dish-detail-info-form-container{
         width: 50%;
-        
     }
 }

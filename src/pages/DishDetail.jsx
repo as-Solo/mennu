@@ -137,13 +137,13 @@ function DishDetail() {
             </div>}
           </div>
         </div>
-        <div className="dish-detail-info-form-container" style={editando?{gap:"10px", paddingTop:"35px"}:{}}>
+        <div className="dish-detail-info-form-container" style={editando?{gap:"10px", paddingTop:"55px"}:{}}>
           <div className="dish-detail-categoria-rating">
             {editando
             ? 
             // <div className="add-dish-categorias-container">
               <div className="add-dish-select-container">
-                  <label className="add-dish-label-select" htmlFor="categoria">categoria</label>
+                  <label className="add-dish-label-select" htmlFor="categoria" >categoria</label>
                   <select className="add-dish-text-select" onChange={(e)=>handleInputs(e)} name="categoria" id="categoria" value={editDish.categoria}>
                     <option value="" style={{fontStyle:"italic", fontSize:".9rem"}}>--No seleccionada--</option>
                     {categorias.map((dato, index)=>{
@@ -160,11 +160,11 @@ function DishDetail() {
 
             {editando
             ? <div className="add-dish-precio-rating-container">
-              <div className="add-dish-text-input-container text-input-number-container" style={{width:"100px"}}>
-                <label className="add-dish-text-label label-number" htmlFor="rating" style={editDish.rating?styleLabel:{}}>rating</label>
-                <input className="add-dish-text-input input-text-number"onChange={(e)=>handleInputs(e)} type="number" min={0} max={5} name="rating" value={editDish.rating}/>
+                <div className="add-dish-text-input-container text-input-number-container" style={{width:"100px"}}>
+                  <label className="add-dish-text-label label-number" htmlFor="rating" style={editDish.rating?styleLabel:{}}>rating</label>
+                  <input className="add-dish-text-input input-text-number"onChange={(e)=>handleInputs(e)} type="number" min={0} max={5} name="rating" value={editDish.rating}/>
+                </div>
               </div>
-            </div>
             :<div className='dish-detail-item-stars-container'>
               <div className='dish-detail-item-star'>
                 <img src={starsEmpty} alt="" />
