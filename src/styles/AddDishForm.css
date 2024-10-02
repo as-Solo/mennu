@@ -4,7 +4,12 @@
     color: rgb(74, 42, 24);
     color: rgb(240, 240, 242);
 }
+.centradito-add-dishes{
+    display: flex;
+    justify-content: center;
+}
 .add-dish-form-container{
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -203,4 +208,46 @@
 
 .menuId-select{
     width: 60%;
+}
+
+.mensajes-creacion{
+    opacity: 0;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    flex-direction: column;
+    /* border: 1px red solid; */
+    background-color: rgba(255, 255, 255, 0.87);
+    transition: 1s;
+    pointer-events: none;
+   
+}
+
+.pastilla-mensaje{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-weight: 600;
+    font-size: calc(.7rem + .8vw);
+    text-align: center;
+    background-color: rgb(231, 164, 69);
+    border-radius:60px;
+    border: solid 2px rgb(231, 164, 69);
+    padding: 10px 20px;
+}
+
+.pastilla-mensaje p{
+margin: 0;
+padding: 0;
+}
+
+super{
+    color: rgb(231, 164, 69);
 }

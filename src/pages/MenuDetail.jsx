@@ -15,7 +15,7 @@ function MenuDetail() {
 
   const getData = async ()=>{
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/menus/${menuId}?_embed=dishes`)
-
+    console.log(response.data)
     setMenu(response.data)
   }
 

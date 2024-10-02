@@ -13,6 +13,7 @@ const redirect = useNavigate()
   const [categorias, setCategorias] = useState([])
   const [categoriasMenu, setCategoriasMenu] = useState([])
   const [isTyping, setIsTyping] = useState(null)
+  const [showMessage, setShowMessage] = useState(false)
   const [newDish, setNewDish] = useState({
     "nombre":'',
     "image":'',
@@ -110,6 +111,8 @@ const handleCreate = async ()=>{
     else{
       console.log("Aqui vendria una ventanita explicativa de por qué no se ha añadido nada")
       console.log(newDish)
+      setShowMessage(true)
+      setTimeout(()=>setShowMessage(false), 2000)
     }
 }
 // ---------------------------------------------------------
@@ -123,96 +126,104 @@ const handleCreate = async ()=>{
 
 
   return (
-    <div className="add-dish-form-container">
-        <div className="add-dish-text-input-container">
-          <div className="width-text-input-container-nombre">
-            <label className="add-dish-text-label" htmlFor="nombre" style={newDish.nombre?styleLabel:{}}>Nombre</label>
-            <input className="add-dish-text-input" onChange={(e)=>handleObject(e)} type="text" name="nombre" value={newDish.nombre}/>
+    <div className="centradito-add-dishes">
+      <div className="add-dish-form-container">
+          <div className="add-dish-text-input-container">
+            <div className="width-text-input-container-nombre">
+              <label className="add-dish-text-label" htmlFor="nombre" style={newDish.nombre?styleLabel:{}}>Nombre <super>*</super> </label>
+              <input className="add-dish-text-input" onChange={(e)=>handleObject(e)} type="text" name="nombre" value={newDish.nombre}/>
+            </div>
           </div>
-        </div>
 
-        <div className="add-dish-text-input-container">
-          <div className="width-text-input-container">
-            <label className="add-dish-text-label" htmlFor="image" style={newDish.image?styleLabel:{}}>URL de la Imagen</label>
-            <input className="add-dish-text-input add-dish-text-url" onChange={(e)=>handleObject(e)} type="text" name="image" value={newDish.image}/>
-          </div>
-        </div>
- 
-        <div className="add-dish-categorias-container">
-          <div className="add-dish-select-container">
-            <label className="add-dish-label-select" htmlFor="categoria">Categoria</label>
-            <select className="add-dish-text-select" onChange={(e)=>handleObject(e)} name="categoria" id="categoria" value={newDish.categoria}>
-              <option value="" style={{fontStyle:"italic", fontSize:".9rem"}}>--Vacio--</option>
-              {categorias.map((dato, index)=>{
-                return (
-                <option key={index} value={dato} name={dato}>{dato}</option>
-              )
-              })}
-            </select>
+          <div className="add-dish-text-input-container">
+            <div className="width-text-input-container">
+              <label className="add-dish-text-label" htmlFor="image" style={newDish.image?styleLabel:{}}>URL de la Imagen <super>*</super></label>
+              <input className="add-dish-text-input add-dish-text-url" onChange={(e)=>handleObject(e)} type="text" name="image" value={newDish.image}/>
+            </div>
           </div>
   
-          <div className="add-dish-select-container">
-            <label className="add-dish-label-select" htmlFor="categoriaMenu">Categoria en menu</label>
-            <select className="add-dish-text-select" onChange={(e)=>handleObject(e)} name="categoriaMenu" id="categoriaMenu" value={newDish.categoriaMenu}>
-              <option value="" style={{fontStyle:"italic", fontSize:".9rem"}}>--Vacio--</option>
-              {categoriasMenu.map((dato, index)=>{
+          <div className="add-dish-categorias-container">
+            <div className="add-dish-select-container">
+              <label className="add-dish-label-select" htmlFor="categoria">Categoria <super>*</super></label>
+              <select className="add-dish-text-select" onChange={(e)=>handleObject(e)} name="categoria" id="categoria" value={newDish.categoria}>
+                <option value="" style={{fontStyle:"italic", fontSize:".9rem"}}>--Vacio--</option>
+                {categorias.map((dato, index)=>{
+                  return (
+                  <option key={index} value={dato} name={dato}>{dato}</option>
+                )
+                })}
+              </select>
+            </div>
+    
+            <div className="add-dish-select-container">
+              <label className="add-dish-label-select" htmlFor="categoriaMenu">Categoria en menu <super>*</super></label>
+              <select className="add-dish-text-select" onChange={(e)=>handleObject(e)} name="categoriaMenu" id="categoriaMenu" value={newDish.categoriaMenu}>
+                <option value="" style={{fontStyle:"italic", fontSize:".9rem"}}>--Vacio--</option>
+                {categoriasMenu.map((dato, index)=>{
+                  return (
+                  <option key={index} value={dato} name={dato}>{dato}</option>
+                )
+                })}
+              </select>
+            </div>
+          </div>
+
+          <div className="add-dish-precio-rating-container">
+            <div className="add-dish-text-input-container text-input-number-container">
+              <label className="add-dish-text-label label-number" htmlFor="precio" style={newDish.precio?styleLabel:{}}>Precio<super>*</super></label>
+              <input className="add-dish-text-input input-text-number" onChange={(e)=>handleObject(e)} type="number" name="precio" min={0} value={newDish.precio}/>
+            </div>
+
+            <div className="add-dish-text-input-container text-input-number-container">
+              <label className="add-dish-text-label label-number" htmlFor="rating" style={newDish.rating?styleLabel:{}}>Puntuacion<super>*</super></label>
+              <input className="add-dish-text-input input-text-number" onChange={(e)=>handleObject(e)} type="number" name="rating" min={0} max={5} value={newDish.rating}/>
+            </div>
+          </div>
+  
+          <div className="add-dish-vegan-gluten-container">
+            <div className="add-dish-check-container">
+              <label htmlFor="isVegan" className="add-dish-label-chexkbox">Es vegano</label>
+              <div className="add-dish-chexbox-text" style={newDish.isVegan?{backgroundColor:"rgb(125, 140, 42, .2)", borderColor:"rgb(125, 140, 42)"}:{}}>
+                <div className="pelotica-checkbox" style={newDish.isVegan?{left:"9px", backgroundColor:"rgb(125, 140, 42)"}:{}}></div>
+                <input style={{position:"absolute", opacity:"0"}} onChange={(e)=>handleObjectCheck(e)} type="checkbox" name="isVegan" value={newDish.isVegan}/>
+              </div>
+            </div>
+
+            <div className="add-dish-check-container">
+              <label htmlFor="isGlutenFree" className="add-dish-label-chexkbox">Sin gluten</label>
+              <div className="add-dish-chexbox-text" style={newDish.isGlutenFree?{backgroundColor:"rgb(125, 140, 42, .2)", borderColor:"rgb(125, 140, 42)"}:{}}>
+                <div className="pelotica-checkbox" style={newDish.isGlutenFree?{left:"9px", backgroundColor:"rgb(125, 140, 42)"}:{}}></div>
+                <input style={{position:"absolute", opacity:"0"}} onChange={(e)=>handleObjectCheck(e)} type="checkbox" name="isGlutenFree" value={newDish.isGlutenFree}/>
+              </div>
+            </div>
+          </div>
+
+          <div className="add-dish-select-container menuId-select">
+            <label className="add-dish-label-select" htmlFor="menuId" >Menu al que pertenece</label>
+            <select className="add-dish-text-select" onChange={(e)=>handleObject(e)} name="menuId" id="menuId" value={newDish.menuId}>
+              <option value="" style={{fontStyle:"italic", fontSize:".9rem"}}>--Sin asignar--</option>
+              {menuInfo.map(dato=>{
+                if(dato.id !== 0){
                 return (
-                <option key={index} value={dato} name={dato}>{dato}</option>
-              )
+                <option key={dato.id} value={dato.id} name={dato.nombre}>{dato.nombre}</option>
+              )}
               })}
             </select>
           </div>
-        </div>
 
-        <div className="add-dish-precio-rating-container">
-          <div className="add-dish-text-input-container text-input-number-container">
-            <label className="add-dish-text-label label-number" htmlFor="precio" style={newDish.precio?styleLabel:{}}>Precio</label>
-            <input className="add-dish-text-input input-text-number" onChange={(e)=>handleObject(e)} type="number" name="precio" min={0} value={newDish.precio}/>
+          <div className="add-dish-descripcion-container">
+            <label className="add-dish-label-descripcion" htmlFor="descripcion">Descripcion<super>*</super></label>
+            <textarea className="add-dish-text-descripcion" onChange={(e)=>handleObject(e)} type="text" name="descripcion"/>
           </div>
 
-          <div className="add-dish-text-input-container text-input-number-container">
-            <label className="add-dish-text-label label-number" htmlFor="rating" style={newDish.rating?styleLabel:{}}>Puntuacion</label>
-            <input className="add-dish-text-input input-text-number" onChange={(e)=>handleObject(e)} type="number" name="rating" min={0} max={5} value={newDish.rating}/>
-          </div>
+            <button disabled={showMessage} onClick={handleCreate} style={{position:"absolute", bottom:"20px", borderRadius:"30px"}}>CREAR</button>
+      </div>
+      <div className="mensajes-creacion" style={showMessage?{opacity:"1"}:{}}>
+        <div className="pastilla-mensaje">
+          <p>No se ha creado el plato.</p>
+          <p>Recuerda añadir los campos requeridos correctamente</p>
         </div>
- 
-        <div className="add-dish-vegan-gluten-container">
-          <div className="add-dish-check-container">
-            <label htmlFor="isVegan" className="add-dish-label-chexkbox">Es vegano</label>
-            <div className="add-dish-chexbox-text" style={newDish.isVegan?{backgroundColor:"rgb(125, 140, 42, .2)", borderColor:"rgb(125, 140, 42)"}:{}}>
-              <div className="pelotica-checkbox" style={newDish.isVegan?{left:"9px", backgroundColor:"rgb(125, 140, 42)"}:{}}></div>
-              <input style={{position:"absolute", opacity:"0"}} onChange={(e)=>handleObjectCheck(e)} type="checkbox" name="isVegan" value={newDish.isVegan}/>
-            </div>
-          </div>
-
-          <div className="add-dish-check-container">
-            <label htmlFor="isGlutenFree" className="add-dish-label-chexkbox">Sin gluten</label>
-            <div className="add-dish-chexbox-text" style={newDish.isGlutenFree?{backgroundColor:"rgb(125, 140, 42, .2)", borderColor:"rgb(125, 140, 42)"}:{}}>
-              <div className="pelotica-checkbox" style={newDish.isGlutenFree?{left:"9px", backgroundColor:"rgb(125, 140, 42)"}:{}}></div>
-              <input style={{position:"absolute", opacity:"0"}} onChange={(e)=>handleObjectCheck(e)} type="checkbox" name="isGlutenFree" value={newDish.isGlutenFree}/>
-            </div>
-          </div>
-        </div>
-
-        <div className="add-dish-select-container menuId-select">
-          <label className="add-dish-label-select" htmlFor="menuId" >Menu al que pertenece</label>
-          <select className="add-dish-text-select" onChange={(e)=>handleObject(e)} name="menuId" id="menuId" value={newDish.menuId}>
-            <option value="" style={{fontStyle:"italic", fontSize:".9rem"}}>--Sin asignar--</option>
-            {menuInfo.map(dato=>{
-              if(dato.id !== 0){
-              return (
-              <option key={dato.id} value={dato.id} name={dato.nombre}>{dato.nombre}</option>
-            )}
-            })}
-          </select>
-        </div>
-
-        <div className="add-dish-descripcion-container">
-          <label className="add-dish-label-descripcion" htmlFor="descripcion">Descripcion</label>
-          <textarea className="add-dish-text-descripcion" onChange={(e)=>handleObject(e)} type="text" name="descripcion"/>
-        </div>
-
-          <button onClick={handleCreate} style={{position:"absolute", bottom:"20px", borderRadius:"30px"}}>CREAR</button>
+      </div>
     </div>
   )
 }
