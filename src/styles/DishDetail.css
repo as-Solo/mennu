@@ -20,6 +20,8 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
+    /* display: flex; */
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
@@ -29,6 +31,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    /* max-width: 700px; */
     aspect-ratio: 1/.6;
     height: auto;
     z-index: 90;
@@ -158,6 +161,7 @@
 .dish-detail-boton-volver-container{
     position: absolute;
     top:-38px;
+    left: 0;
 }
 .dish-detail-boton-volver{
     border-radius: 30px;
@@ -263,4 +267,20 @@
 
 .dish-detail-botoncicos{
     width: 100px;
+}
+
+@media (width > 700px){
+    .dish-detail-container{
+        display: flex;
+        gap: 50px;
+        min-height: 550px;
+        padding: 20px;
+    }
+    .dish-detail-image-precio-flotante-container{
+        width: 50%;
+    }
+    .dish-detail-info-form-container{
+        width: 50%;
+        
+    }
 }
