@@ -282,4 +282,9 @@
     .dish-detail-info-form-container{
         width: 50%;
     }
+
+    .retoquitos-height{
+        min-height: 135px !important;
+        max-height: 300px !important
+    }
 }
