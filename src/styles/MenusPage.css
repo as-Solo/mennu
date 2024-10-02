@@ -9,7 +9,7 @@
 
 }
 .menus-container {
-  
+
 }
 .menu-container{
   width: 50vw;
@@ -36,4 +36,30 @@
 .menus-container-sup button {
   border-radius: 15px;
 
+}
+
+.crear-menu {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  position: fixed;
+  left: 0;
+  bottom:0;
+  background-color: white;
+  padding: 2vw;
+}
+
+
+@media(width > 1024px){
+  .menus-container-sup{
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+  }
+
+  .menu-container{
+    display:flex;
+  }
 }

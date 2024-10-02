@@ -41,7 +41,7 @@ function Menus() {
           <Link to={`/menus/menu-detail/${menu.id}`} key={menu.id} style={{display:"flex", width:"100%", margin:"20px 0px", justifyContent:"center",  gap:"20px" }}>
            <div className="menu-container">
 
-           <p>{menu.nombre}</p>
+           <h2>Menú {menu.nombre}</h2>
             <p>{menu.precio}</p>
            </div>
            
@@ -50,8 +50,10 @@ function Menus() {
         )
       }
       })}
-      <Link to={'/add-menu'}>
-        <button>Crear un nuevo Menú</button>
+      <Link to={'/add-menu'}> 
+      <div className="crear-menu">
+      <button>Crear un nuevo Menú</button>
+      </div>
       </Link>
     </div>
   )
