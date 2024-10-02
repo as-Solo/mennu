@@ -107,7 +107,7 @@ function DishDetail() {
   }
   return (
     <div style={{margin:'50px 200px'}}>
-      <button onClick={()=>redirect('/dishes')}>⤺</button>
+      <button onClick={()=>redirect('/dishes')} style={{borderRadius:"30px", padding:"2px 20px"}}>⤺</button>
       <div style={{width:'500px', height:'350px'}}>
         <img src={dish.image} alt="" style={{width:'100%', height:'100%', objectFit:"cover"}}/>
       </div>

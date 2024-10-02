@@ -123,8 +123,9 @@ function Dishes() {
               <DishCardItem key={dish.id} dish={dish}/>
             )
           })}
+          <div className="last-man-stand" ></div>
         </div>
-        <button className="dishes-add-dish" onClick={()=>redirect('/add-dish')}>ADD DISH</button>
+        <button className="dishes-add-dish" onClick={()=>redirect('/add-dish')}>AÑADIR</button>
         <div className="dishes-pastilla-footer"></div>
       </div>
     </div>

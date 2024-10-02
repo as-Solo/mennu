@@ -53,3 +53,10 @@
     background: #ff000000; 
     border-radius: 10px; 
 }
+
+.last-man-stand{
+    
+    background-color: transparent;
+    width: 1px;
+    padding: 25px 0;
+}

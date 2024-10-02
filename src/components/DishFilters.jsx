@@ -26,10 +26,10 @@ function DishFilters(props) {
     setChecked(e.target.checked)
     if (e.target.checked){
       // console.log(screenWidth)
-      if(screenWidth >=564){
+      if(screenWidth >=620){
         setMorefilters("140px")
       }
-      else if (screenWidth >= 408){
+      else if (screenWidth >= 465){
         setMorefilters("180px")
       }
       else{
@@ -104,7 +104,7 @@ function DishFilters(props) {
         </div>
 
         <select className="form-dish-select" onChange={(e)=>handleInputs(e)} name="categoria" id="">
-          <option value={''}>-- Todos --</option>
+          <option value={''}>-- Categoria</option>
           <option value="entrantes">Entrantes</option>
           <option value="carnes">Carnes</option>
           <option value="pescados">Pescados</option>
@@ -115,7 +115,7 @@ function DishFilters(props) {
         </select>
 
         <select className="form-dish-select" onChange={(e)=>handleInputs(e)} name="categoriaMenu" id="">
-          <option value={''}>-- Todos --</option>
+          <option value={''}>-- Categoria Menu</option>
           <option value="primeros">Primeros</option>
           <option value="segundos">Segundos</option>
           <option value="postres">Postres</option>

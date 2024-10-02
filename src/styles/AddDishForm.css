@@ -1,0 +1,206 @@
+.paleta{
+    color: rgb(231, 164, 69);
+    color: rgb(125, 140, 42);
+    color: rgb(74, 42, 24);
+    color: rgb(240, 240, 242);
+}
+.add-dish-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 25px;
+}
+.add-dish-text-input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all .3s;
+    width: 100%;
+}
+
+.width-text-input-container-nombre{
+    position: relative;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.width-text-input-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.add-dish-text-label{
+    pointer-events: none;
+    position: absolute;
+    color: rgb(125, 140, 42);
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0);
+    top: 9px;
+    transition: all .3s;
+    left: 14px;
+    margin: 0px;
+    padding: 0 10px 0 5px;
+    line-height: .9rem;
+}
+.add-dish-text-input{
+    outline: none;
+    background-color: transparent;
+    border: 2px solid rgb(125, 140, 42);
+    border-radius: 30px;
+    color: rgb(74, 42, 24);
+    font-weight: 600;
+    padding: 2px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+.add-dish-text-input-container:focus-within .add-dish-text-input{
+    border-color: rgb(231, 164, 69);
+}
+.add-dish-text-input-container:focus-within .add-dish-text-label{
+    color: rgb(231, 164, 69);
+    background-color: rgb(255, 255, 255);
+    top: -7px;
+    font-size: .7rem;
+}
+
+.add-dish-categorias-container{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin: 9px 0;
+}
+.add-dish-select-container{
+    display: flex;
+    position: relative;
+    width: 100%;
+}           
+.add-dish-label-select{
+    position: absolute;
+    top: -6px;
+    color: rgb(125, 140, 42);
+    font-size: .7rem;
+    font-weight: 600;
+    left: 15px;
+    line-height: .8rem;
+    background: linear-gradient(to bottom, white 50%, #e5e8d4 50%);
+    padding: 0 10px 0 5px;
+    z-index: 30px;
+}
+.add-dish-text-select{
+    border: 2px solid rgb(125, 140, 42);
+    border-radius: 30px;
+    outline: none;
+    padding: 2px;
+    /* padding-left: 12px; */
+    background-color: rgba(125, 140, 42, 0.2);
+    color: rgb(74, 42, 24);
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+.add-dish-precio-rating-container{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.text-input-number-container{
+    display: flex;
+    width: 35%;
+}
+
+.input-text-number{
+    /* border: 1px solid red; */
+    width: 100% !important;
+}
+
+.add-dish-vegan-gluten-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.add-dish-check-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.add-dish-label-chexkbox{
+    font-weight: 600;
+    color: rgb(74, 42, 24);
+}
+
+.add-dish-chexbox-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(231, 164, 69, 0);
+    border: solid 2px rgb(190, 190, 190);
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    padding: 0 10px;
+    position: relative;
+    transition: all .2s ease;
+}
+
+.pelotica-checkbox{
+    width: 11px;
+    height: 11px;
+    border-radius: 15px;
+    background-color: rgb(190, 190, 190);
+    position: absolute;
+    left: 0px;
+    transition: all .2s ease;
+}
+.add-dish-descripcion-container{
+    margin-top: 10px;
+    display: flex;
+    /* border: 1px red solid; */
+    width: 100%;
+    position: relative;
+}
+.add-dish-label-descripcion{
+    position: absolute;
+    font-weight: 600;
+    color: rgb(125, 140, 42);
+    top: -10px;
+    left: 20px;
+    font-size: .8rem;
+    background: linear-gradient(to bottom, white 50%, #e5e8d4 50%);
+    padding: 0 10px 0 5px;
+    z-index: 30;
+}
+.add-dish-text-descripcion{
+    border: none;
+    outline: none;
+    background-color: rgb(125, 140, 42, 0.2);
+    border: solid rgb(125, 140, 42);
+    border-width: 2px 1px;
+    border-radius: 20px 20px 0px 20px;
+    width: 100%;
+    min-height: 140px;
+    max-height: 140px;
+    padding: 15px 15px;
+    color: rgb(74, 42, 24);
+    font-weight: 500;
+    font-style: italic;
+    font-size: .93rem;
+}
+
+.menuId-select{
+    width: 60%;
+}
