@@ -1,5 +1,5 @@
 import DishCard from "../components/DishCard"
-import fotoLanding from "../assets/foto-comida.avif"
+import fotoLanding from "../assets/HomeImage.png"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Carousel from 'react-bootstrap/Carousel';
@@ -54,7 +54,7 @@ function Home() {
   return (
 
     <div>
-      <div style={{backgroundColor:"black"}}>
+      <div style={{backgroundColor:"white"}}>
         <img src={fotoLanding} alt="foto-comida" style={{width:"60%", objectFit:"cover", objectPosition:"left"}}/>
       </div>
 
