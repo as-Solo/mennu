@@ -1,0 +1,286 @@
+.paleta{
+    color: rgb(231, 164, 69);
+    color: rgb(125, 140, 42);
+    color: rgb(74, 42, 24);
+    color: rgb(240, 240, 242);
+}
+
+.dish-detail-god-container{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    /* de aqui para abajo no vale */
+    /* border: 1px solid red; */
+}
+
+.dish-detail-container{
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.dish-detail-image-precio-flotante-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* max-width: 700px; */
+    aspect-ratio: 1/.6;
+    height: auto;
+    z-index: 90;
+    border: 2px solid rgb(125, 140, 42);
+    border-radius: 10px;
+    border-width: 2px 2px 0px 0px; /*! esto me causa duda */
+     /* de aqui para abajo no vale */
+}
+
+.dish-detail-info-form-container{
+    width: 100%;
+    /* background-color: rgba(231, 164, 69, 0.2); */
+    padding: 15px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-radius: 15px; 
+    border: 1px solid rgb(240, 240, 242);
+    transition: all .3s ease;
+}
+
+.container-flotante-rotate{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: rotate(-8deg);
+}
+
+.dish-detail-image{
+    box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.65);
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dish-detail-precio-flotante{
+    display: flex;
+    box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.65);
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: white;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(231, 164, 69);
+    font-size: 1.9rem;
+    font-weight: 800;
+    position: absolute;
+    bottom: -25px;
+    right: 45px;
+    transform: rotate(16deg);
+}
+
+.dish-detail-categoria-rating{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 0px;
+    gap: 10px;
+}
+
+.dish-detail-etiqueta-precio{
+    background-color: rgb(125, 140, 42);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 30px;
+    margin: 0;
+}
+
+
+.dish-detail-item-stars-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(231, 164, 69);
+    border-radius: 30px;
+    position: relative;
+    width: 100px;
+}
+
+.dish-detail-item-star{
+    /* border: 1px solid green; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.dish-detail-item-star img{
+    padding: 0;
+    object-fit: contain;
+    width: 90%;
+    height: 90%;
+}
+
+.dish-detail-etiqueta-nombre{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgb(74, 42, 24);
+    margin: 0;
+}
+
+.subrayado-nombre{
+    margin-bottom: 5px;
+    border-width: 1px 0 0 0;
+}
+
+.dish-detail-vegan-gluten-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.logos-veganos{
+    height: 18px;
+}
+
+.dish-detail-descripcion-container{
+    padding-top: 10px;
+    color: rgb(74, 42, 24);
+    font-weight: 500;
+    font-style: italic;
+}
+
+.dish-detail-boton-volver-container{
+    position: absolute;
+    top:-38px;
+    left: 0;
+}
+.dish-detail-boton-volver{
+    border-radius: 30px;
+    padding: 1px 20px;
+}
+
+.dish-detail-botonera-footer{
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 14px;
+    background-color: white;
+    z-index: 30;
+    gap:15px;
+}
+
+.dish-detail-botones-footer{
+    border-radius: 30px;
+    pointer-events:all;
+}
+
+.eraser{
+    background-color: rgb(134, 24, 24);
+}
+
+.pegatina-precio{
+    position: absolute;
+    bottom: -25px;
+    right: 45px;
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    transform: rotate(8deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.retoquitos-height{
+    min-height: 100px !important;
+    max-height: 100px !important;
+}
+
+.dish-detail-input-precio{
+    background-color: rgba(125, 140, 42, 0.2);
+    outline: none;
+    border: rgb(125, 140, 42) solid 2px;
+    border-radius: 100%;
+    text-align: center;
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    color: rgb(74, 42, 24);
+    font-weight: 800;
+    font-size: 1.7rem;
+}
+.dish-detail-label-precio{
+    color: rgb(125, 140, 42);
+    font-size: .7rem;
+    font-weight: 700;
+    z-index: 20;
+    top: 0;
+    position: absolute;
+}
+
+.width-text-input-container-nombre{
+    width: 200px !important;
+}
+
+.dish-detail-botonera-confirm{
+    transition: all .3s;
+    position: absolute;
+    z-index: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(231, 164, 69);
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.425);
+    /* width: 100vw;
+    height: 100vh; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+}
+
+.dish-detail-mensaje-botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(240, 240, 242);
+    padding: 30px;
+    border-radius: 90px;
+    width: 90%;
+    text-align: center;
+}
+
+.dish-detail-botoncicos{
+    width: 100px;
+}
+
+@media (width > 700px){
+    .dish-detail-container{
+        display: flex;
+        gap: 50px;
+        min-height: 550px;
+        padding: 20px;
+    }
+    .dish-detail-image-precio-flotante-container{
+        width: 50%;
+    }
+    .dish-detail-info-form-container{
+        width: 50%;
+        
+    }
+}

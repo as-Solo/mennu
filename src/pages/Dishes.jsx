@@ -10,7 +10,8 @@ import DishFilters from "../components/DishFilters"
 function Dishes() {
   const redirect = useNavigate()
   const [data, setData] = useState(null)
-  const[query, setQuery] = useState('http://localhost:5005/dishes')
+  // import.meta.env.VITE_SERVER_URL
+  const[query, setQuery] = useState(`${import.meta.env.VITE_SERVER_URL}/dishes`)
   const [filters, setFilters] = useState({nombre:'', descripcion:'', categoria:'', categoriaMenu:'', isGlutenFree:null, isVegan:null, precio:0, rating:0})
   const [variantes, setVariantes] = useState({precioVar:'', ratingVar:''})
   const [ascendant, setAscendant] = useState(true)
@@ -18,7 +19,7 @@ function Dishes() {
   const [isTyping, setIsTyping] = useState(null)
 
   const createQuery = ()=>{
-    let queryStr = 'http://localhost:5005/dishes?';
+    let queryStr = `${import.meta.env.VITE_SERVER_URL}/dishes?`;
     if (filters.nombre){
       queryStr += `&nombre_like=${filters.nombre}`
     }
@@ -122,8 +123,9 @@ function Dishes() {
               <DishCardItem key={dish.id} dish={dish}/>
             )
           })}
+          <div className="last-man-stand" ></div>
         </div>
-        <button className="dishes-add-dish" onClick={()=>redirect('/add-dish')}>ADD DISH</button>
+        <button className="dishes-add-dish" onClick={()=>redirect('/add-dish')}>AÑADIR</button>
         <div className="dishes-pastilla-footer"></div>
       </div>
     </div>

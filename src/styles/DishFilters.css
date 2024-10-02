@@ -140,7 +140,7 @@
     align-items: center;
 }
 
-@media(width >= 689px){
+@media(width >= 718px){
     .boton-mas-filtros{
         display: none;
     }

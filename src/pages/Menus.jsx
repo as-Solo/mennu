@@ -20,7 +20,7 @@ function Menus() {
 
 
   const getData = async ()=>{
-    const response = await axios.get(`http://localhost:5005/menus?_embed=dishes`)
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/menus?_embed=dishes`)
     setMenus(response.data)
   }
   const handleInputsText = (e)=>{

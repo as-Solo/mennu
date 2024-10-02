@@ -23,7 +23,7 @@ function Home() {
   const [postres, setPostres] = useState(null)
 
   const getRows = async()=>{
-    const response = await axios.get("http://localhost:5005/dishes")
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes`)
     const dishes = response.data
     setEntrantes(dishes.filter(elem=>elem.categoria.toLowerCase()==="entrantes"))
     setCarnes(dishes.filter(elem=>elem.categoria.toLowerCase()==="carnes"))

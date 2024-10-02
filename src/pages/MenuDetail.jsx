@@ -16,7 +16,7 @@ function MenuDetail() {
 
 
   const handleDelete = async()=>{
-    await axios.delete(`http://localhost:5005/menus/${menuId}`)
+    await axios.delete(`${import.meta.env.VITE_SERVER_URL}/menus/${menuId}`)
     redirect('/menus')
     setBorrando(!borrando)
   }
@@ -25,7 +25,8 @@ function MenuDetail() {
   }
 
   const getData = async ()=>{
-    const response = await axios.get(`http://localhost:5005/menus/${menuId}?_embed=dishes`)
+    const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/menus/${menuId}?_embed=dishes`)
+    console.log(response.data)
     setMenu(response.data)
   }
 
