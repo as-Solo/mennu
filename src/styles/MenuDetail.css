@@ -3,55 +3,28 @@
 
 } */
 
-.menu-detail {
-  text-align: center;
-  background-color: rgb(240,240,242);
 
- 
-
-  padding-top: 13vh;
-  display: flex;
-  flex-direction: column;
-  padding: 3vw;
-
-
-  align-content:center;
-  align-items: center;
-  justify-content:center;
-  width: 100vw;
-  overflow-y: auto
-}
-
-.menu-detail h1{
-  font-size: 2em;
-  border: 1px outset rgb(74,42,24);
-  padding: 13px;
-  border-radius: 15px;
-}
-
-.menu-detail h3{
-  font-size: 1em;
-}
-
-.redirect {
+#redirect {
   margin: 2vw;
-  position: relative;
+  margin-top: 3vw;
   text-align: left;
-  width:90vw;
-}
-.menu-detail button {
-    
-    
+  
 }
 
-.plato {
+
+  .plato {
   border: 1px outset rgb(74,42,24);
   border-radius: 15px;
   padding: 2vh;
+  background-color: white;
+
 
 }
 .plato p {
   margin:0;
+}
+.plato h5 {
+  text-align: center;
 }
 .data-dish-container {
   display: none;
@@ -73,27 +46,28 @@
   padding: 1vh 2vh;
 }
 
+
 .precio p{
   margin:0;
 }
 
+.filter{
+  padding-top: 5vh;
+}
+#platos-menu{
+background-color: rgb(231,164,69,0.1);
+padding-top:2vw;
+
+}
+
+
 @media(width > 1024px){
-  .menu-detail{
-    text-align: center;
-    align-items:flex-start; 
-    justify-content: center;
-    margin:0;
-    
-
+  .dishes-container-menu{
+    align-items: flex-start;
   }
-  .menu-detail h1 {
-    text-align: center;
-
-  }
+ 
   .platos{
     display: flex;
-
-
     overflow-x: auto; 
 
   }
@@ -108,7 +82,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 30vw
+    width: 30vw;
   }
   .plato img {
     width:12vw;
@@ -122,6 +96,29 @@
     align-items: center;
 
   }
-  .redirect {
-    margin-left: 0;}
+ 
+  #platos-menu{
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      padding: 2vw;
+      margin:0;
+      width: 100%;
+
+    }
+
+    #redirect {
+      margin: 0;
+
+    }
+    .super {
+
+      display: flex;
+      padding: 2vw;
+      max-width: 1200px;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      margin: auto;
+    }
 }

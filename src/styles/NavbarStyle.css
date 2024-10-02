@@ -1,24 +1,40 @@
 nav {
-  width: 100%;
-  position: relative;
-  z-index: 1;
+  max-width: 100%;
+  z-index: 100;
   
+}
+.nav-sup {
+  width:100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+  justify-content: space-between;
+  padding: 2vw 0;
 
 }
 .navbar {
   padding-bottom: 0;
   width: 100%;
+  display:flex;
+  justify-content: center;
+  position: relative;
+  top:0;
+  left:0;
+
 }
 nav .container {
   display: flex !important;
-  padding: 0;
+  padding: 2vw;
   width: 100%;
   height: 10vh;
 
 }
 
 .navbar-brand {
-  padding:20px
+  padding:20px;
+  padding-bottom: 2vw;
+
 }
 
 .navbar-brand img {
@@ -38,6 +54,9 @@ margin: 0;
 width: 100%;
 
 }
+.show{
+  position: relative;
+}
 
 .d-flex{
   display: flex;
@@ -45,7 +64,10 @@ width: 100%;
   align-items:center;
   justify-content: space-around;
   margin: auto;
-  width: 100%;
+  max-width: 100%;
+
+
+  overflow: hidden;
 
 
 
@@ -53,13 +75,23 @@ width: 100%;
 }
 .d-flex a{
   margin: 0 5px;
-  padding: 10px 30px;
+  padding: 1vw 2vw;
+
 }
+.add-dish-link::before {
+  content: "+ Plato";
+}
+.add-menu-link::before {
+  content: "+ Menu";
+}
+
+
+
 
 @media (min-width: 1024px) {
   nav{
   width: 100%;
-  position: relative;
+  position: fixed;
   }
 
   .navbar {
@@ -81,6 +113,12 @@ width: 100%;
  .d-flex a{
   margin: 0 15px;
 
+}
+.add-dish-link::before {
+  content: "Nuevo Plato";
+}
+.add-menu-link::before {
+  content: "Nuevo Menu";
 }
 .navbar-brand {
   width:50%;
