@@ -112,7 +112,7 @@ const handleCreate = async ()=>{
       console.log("Aqui vendria una ventanita explicativa de por qué no se ha añadido nada")
       console.log(newDish)
       setShowMessage(true)
-      setTimeout(()=>setShowMessage(false), 2000)
+      setTimeout(()=>setShowMessage(false), 2500)
     }
 }
 // ---------------------------------------------------------
