@@ -26,3 +26,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+/* Para Chrome, Safari, Edge y otros navegadores basados en WebKit */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
