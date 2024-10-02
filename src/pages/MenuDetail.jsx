@@ -10,8 +10,19 @@ function MenuDetail() {
   const { menuId } = useParams()
   const redirect = useNavigate()
 
+  const [borrando, setBorrando] = useState(false)
 
 
+
+
+  const handleDelete = async()=>{
+    await axios.delete(`${import.meta.env.VITE_SERVER_URL}/menus/${menuId}`)
+    redirect('/menus')
+    setBorrando(!borrando)
+  }
+  const handleConfirmation = ()=>{
+    setBorrando(!borrando)
+  }
 
   const getData = async ()=>{
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/menus/${menuId}?_embed=dishes`)
@@ -28,17 +39,22 @@ function MenuDetail() {
     return ( <h1>...loading</h1> )
   }
   return (
-    <div className="menu-detail">
-      <div className="redirect">
+    <div className="super">
+
+      <div className="dishes-container dishes-container-menu" >
+
+      <div className="redirect" id="redirect">
       <button onClick={()=>redirect('/menus')}>⤺</button>
       </div>
 
       <h1>Menú {menu.nombre}</h1>
       
       
+      
 
       {menu.dishes && menu.dishes.length > 0 ? (
-        <><div className="platos">
+        <><div className="dishes-fichas-container" id="platos-menu">
+
 
 
           {menu.dishes
@@ -100,14 +116,24 @@ function MenuDetail() {
               </Link>
 
             ))}
-
+        
         </div><div className="precio">
             <p>Precio: {menu.precio} €</p>
-          </div></>
+          </div>
+           {/* BOTON DE BORRAR CON PREGUNTITA */}
+      <button onClick={handleConfirmation}>🗑️</button>
+      {borrando
+      && <><p>Está seguro de que quiere borrar este menú?</p>
+        <button onClick={handleDelete}>Si</button>
+        <button onClick={handleConfirmation}>No</button></>
+      }
+      <hr />
+     
+          </>
        
       ) : (
         <p>No hay platos agregados a este menú.</p>
-      )}</div>
+      )}</div></div>
   )
 }
 

@@ -10,11 +10,13 @@ function MyNavBar() {
 
 
 
+
+
   return (
 
    
-    <Navbar expand="l" bg="light" variant="light" collapseOnSelect>
-      
+    <Navbar expand="l" bg="light"  collapseOnSelect>
+        <div className="nav-sup">
         <Link to="/">
           <Navbar.Brand>
             <img src={logoTeja} alt="logo" />
@@ -25,7 +27,7 @@ function MyNavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <img src={menuHamb} alt="menu hamburguesa" />
         </Navbar.Toggle>
-
+        </div>
         {/* Contenido colapsable */}
         <Navbar.Collapse id="basic-navbar-nav">
           
@@ -55,10 +57,26 @@ function MyNavBar() {
             </Nav.Link>
             <Nav.Link 
               as={Link} 
+              to="/add-dish" 
+              active={location.pathname === '/add-dish'}
+              className="add-dish-link"
+            >
+              
+            </Nav.Link>
+            <Nav.Link 
+              as={Link} 
               to="/menus" 
               active={location.pathname === '/menus'}
             >
               Menus
+            </Nav.Link>
+            <Nav.Link 
+              as={Link} 
+              to="/add-menu" 
+              active={location.pathname === '/add-menu'}
+              className="add-menu-link"
+            >
+              
             </Nav.Link>
           </Nav>
          
