@@ -175,7 +175,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 14px;
+    bottom: 0px;
     background-color: white;
     z-index: 30;
     gap:15px;
@@ -205,8 +205,8 @@
 }
 
 .retoquitos-height{
-    min-height: 100px !important;
-    max-height: 100px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
 }
 
 .dish-detail-input-precio{
