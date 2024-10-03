@@ -45,7 +45,7 @@ function MenuDetail() {
     <div className="super">
 
       <div className="dishes-container dishes-container-menu" >
-
+      <div className="menu-details-info">
       <div className="redirect" id="redirect">
       <button onClick={()=>redirect('/menus')}>⤺</button>
       </div>
@@ -54,6 +54,7 @@ function MenuDetail() {
       <div className="precio">
       <p>Precio: {menu.precio}€</p>
 
+      </div>
       </div>
       {menu.dishes && menu.dishes.length > 0 ? (
         <><div className="dishes-fichas-container" id="platos-menu">
@@ -120,7 +121,9 @@ function MenuDetail() {
 
             ))}
 
+            <div className="last-man-stand">
 
+            </div>
         </div>
 
 

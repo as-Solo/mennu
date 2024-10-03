@@ -66,7 +66,7 @@ function Menus() {
       .map((menu)=>{
         if(menu.id !== 0){
         return(
-          
+          <>
           <Link to={`/menus/menu-detail/${menu.id}`} key={menu.id} style={{display:"flex", width:"100%", margin:"20px 0px", justifyContent:"center",  gap:"20px" }}>
            <div className="menu-container">
             <h2> {menu.nombre.toUpperCase()}</h2>
@@ -74,10 +74,14 @@ function Menus() {
            </div>
            
           </Link>
-          
+            
+          </>
+
         )
       }
-      })}
+      })}<div className="last-man-stand">
+
+      </div>
 
 </div>
         <button className="dishes-add-dish" onClick={()=>redirect('/add-menu')}>Crear menú</button>

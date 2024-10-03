@@ -4,11 +4,16 @@ import logoTeja from "../assets/logo_mennu_teja.png"
 
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { useState } from "react";
 
 function MyNavBar() {
   const location = useLocation()
 
+  const [isToggled, setIsToggled] = useState(false);
 
+  const toggleMenu = () => {
+    setIsToggled(!isToggled);
+  };
 
 
 
@@ -24,8 +29,16 @@ function MyNavBar() {
         </Link>
 
         {/* Botón de menú hamburguesa */}
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <img src={menuHamb} alt="menu hamburguesa" />
+        <Navbar.Toggle 
+        aria-controls="basic-navbar-nav"
+        onClick={toggleMenu}
+        >
+          {/* <img src={menuHamb} alt="menu hamburguesa" /> */}
+          <div className={`hamburger-menu ${isToggled ? "change" : ""}`}>
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
+          </div>
         </Navbar.Toggle>
         </div>
         {/* Contenido colapsable */}
