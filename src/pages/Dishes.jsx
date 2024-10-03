@@ -125,7 +125,7 @@ function Dishes() {
           })}
           <div className="last-man-stand" ></div>
         </div>
-        <button className="dishes-add-dish" onClick={()=>redirect('/add-dish')}>AÑADIR</button>
+        <button className="dishes-add-dish" onClick={()=>redirect('/add-dish')}>Crear plato</button>
         <div className="dishes-pastilla-footer"></div>
       </div>
     </div>

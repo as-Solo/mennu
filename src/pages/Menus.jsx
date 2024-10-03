@@ -80,7 +80,7 @@ function Menus() {
       })}
 
 </div>
-        <button className="dishes-add-dish" onClick={()=>redirect('/add-menu')}>CREAR MENU</button>
+        <button className="dishes-add-dish" onClick={()=>redirect('/add-menu')}>Crear menú</button>
         <div className="dishes-pastilla-footer"></div>
       </div>
     </div>

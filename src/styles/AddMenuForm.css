@@ -196,6 +196,8 @@
     bottom: 12px;
     border-radius: 30px;
     background-color: rgb(125, 140, 42);
+    z-index: 60;
+
     }
 
 .tope-inferior{
@@ -208,4 +210,6 @@
     background-color: white;
     padding: 15px;
     gap: 15px;
+    z-index: 60;
+
 }

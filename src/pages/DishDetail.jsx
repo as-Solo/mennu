@@ -235,10 +235,10 @@ function DishDetail() {
       </div>
       <div className="dish-detail-botonera-footer">
           {/* BOTON DE BORRAR CON PREGUNTITA */}
-          <button className="dish-detail-botones-footer eraser" onClick={handleConfirmation}>BORRAR</button>
+          <button className="dish-detail-botones-footer eraser" onClick={handleConfirmation}>Borrar</button>
           {editando
-            ? <button className="dish-detail-botones-footer" onClick={handleEditConfirmation} style={{backgroundColor:"rgb(125, 140,42)"}}>GUARDAR CAMBIOS</button>
-            : <button className="dish-detail-botones-footer" onClick={handleEdit}>EDITAR</button> }
+            ? <button className="dish-detail-botones-footer" onClick={handleEditConfirmation} style={{backgroundColor:"rgb(125, 140,42)"}}>Guardar cambios</button>
+            : <button className="dish-detail-botones-footer" onClick={handleEdit}>Editar</button> }
       </div>
       <div className="dish-detail-botonera-confirm" style={borrando||confirmation?{}:{opacity:"0"}}>
           {borrando
@@ -256,8 +256,8 @@ function DishDetail() {
               <div className="dish-detail-mensaje-botones">
                 <p>Está seguro que quiere estos cambios?</p>
                 <div style={{display:"flex", gap:"15px"}}>
-                  <button className="dish-detail-botones-footer" onClick={handleEditNo}>CANCELAR</button>
-                  <button className="dish-detail-botones-footer dish-detail-botoncicos" onClick={handleSaveChanges} style={{backgroundColor:"rgb(125, 140, 42"}}>SI</button>
+                  <button className="dish-detail-botones-footer" onClick={handleEditNo}>Cancelar</button>
+                  <button className="dish-detail-botones-footer dish-detail-botoncicos" onClick={handleSaveChanges} style={{backgroundColor:"rgb(125, 140, 42"}}>Si</button>
                 </div>
               </div>
               }
