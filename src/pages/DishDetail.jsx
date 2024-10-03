@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useLocation, useNavigate, useParams } from "react-router-dom"
 // import "../styles/prueba.css"
 import "../styles/DishDetail.css"
 import "../styles/AddDishForm.css"
@@ -16,7 +16,7 @@ function DishDetail() {
   // const {getData} = props // deprecated este momento
   const redirect = useNavigate()
   const {dishId} = useParams()
-
+  const location = useLocation()
   // ------------------------ STATES ------------------------------
   const [dish, setDish] = useState(null)
   const [categorias, setCategorias] = useState([])
@@ -122,7 +122,7 @@ function DishDetail() {
     <div className="dish-detail-god-container">
       <div className="dish-detail-container">
         <div className="dish-detail-boton-volver-container">
-          <button onClick={()=>redirect('/dishes')} className="dish-detail-boton-volver">⤺</button>
+          <button onClick={location.state?.desde?()=>redirect(location.state.desde):()=>redirect('/dishes')} className="dish-detail-boton-volver">⤺</button>
         </div>
         <div className="dish-detail-image-precio-flotante-container">
           <div className="container-flotante-rotate">
