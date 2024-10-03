@@ -57,13 +57,28 @@
 #platos-menu{
 background-color: rgb(231,164,69,0.1);
 padding-top:2vw;
+padding-bottom:16vw;
 
 }
 
+.super {
+  max-height: 88vh; 
+  overflow-y: hidden; 
+}
+
+.dishes-container-menu p{
+  margin : 0;
+}
 
 @media(width > 1024px){
+
+  .super{
+    align-items:flex-start;
+  }
   .dishes-container-menu{
     align-items: flex-start;
+
+
   }
  
   .platos{
@@ -75,8 +90,11 @@ padding-top:2vw;
     overflow-x: auto; 
 
   }
+  .plato h1 {
+    margin -top:1vh;
+  }
   .plato {
-    height : 50vh;
+    height : 40vh;
     margin: 1vh;
     margin-left: 0;
     display: flex;
@@ -96,6 +114,9 @@ padding-top:2vw;
     align-items: center;
 
   }
+  .dishes-container-menu {
+    max-height: 70vh;
+  }
  
   #platos-menu{
       height: auto;
@@ -104,6 +125,7 @@ padding-top:2vw;
       padding: 2vw;
       margin:0;
       width: 100%;
+margin-bottom: 3vh;
 
     }
 
@@ -114,11 +136,13 @@ padding-top:2vw;
     .super {
 
       display: flex;
-      padding: 2vw;
+      padding: 2vw 0;
       max-width: 1200px;
       align-items: center;
       align-content: center;
       justify-content: center;
       margin: auto;
+      margin-bottom: 2vh;
     }
+    
 }

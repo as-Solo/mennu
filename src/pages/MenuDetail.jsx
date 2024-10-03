@@ -7,6 +7,8 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 function MenuDetail() {
 
   const [menu, setMenu] = useState(null)
+  const [confirmation, setConfirmation] = useState(false)
+
   const { menuId } = useParams()
   const redirect = useNavigate()
 
@@ -14,19 +16,20 @@ function MenuDetail() {
 
 
 
-
   const handleDelete = async()=>{
+
     await axios.delete(`${import.meta.env.VITE_SERVER_URL}/menus/${menuId}`)
     redirect('/menus')
     setBorrando(!borrando)
   }
+
   const handleConfirmation = ()=>{
     setBorrando(!borrando)
   }
 
   const getData = async ()=>{
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/menus/${menuId}?_embed=dishes`)
-    console.log(response.data)
+
     setMenu(response.data)
   }
 
@@ -48,10 +51,10 @@ function MenuDetail() {
       </div>
 
       <h1>Menú {menu.nombre}</h1>
-      
-      
-      
+      <div className="precio">
+      <p>Precio: {menu.precio}€</p>
 
+      </div>
       {menu.dishes && menu.dishes.length > 0 ? (
         <><div className="dishes-fichas-container" id="platos-menu">
 
@@ -116,24 +119,61 @@ function MenuDetail() {
               </Link>
 
             ))}
+
+
+        </div>
+
+
         
-        </div><div className="precio">
-            <p>Precio: {menu.precio} €</p>
-          </div>
-           {/* BOTON DE BORRAR CON PREGUNTITA */}
-      <button onClick={handleConfirmation}>🗑️</button>
-      {borrando
-      && <><p>Está seguro de que quiere borrar este menú?</p>
-        <button onClick={handleDelete}>Si</button>
-        <button onClick={handleConfirmation}>No</button></>
-      }
-      <hr />
-     
-          </>
+
+       </>
        
       ) : (
         <p>No hay platos agregados a este menú.</p>
-      )}</div></div>
+      )}
+    
+      
+      </div>  
+     
+
+
+      <div className="dish-detail-botonera-footer">
+          {/* BOTON DE BORRAR CON PREGUNTITA */}
+          <button className="dish-detail-botones-footer eraser" onClick={handleConfirmation}>BORRAR</button>
+          {/* {editando
+            ? <button className="dish-detail-botones-footer" onClick={handleEditConfirmation} style={{backgroundColor:"rgb(125, 140,42)"}}>GUARDAR CAMBIOS</button>
+            : <button className="dish-detail-botones-footer" onClick={handleEdit}>EDITAR</button> } */}
+      </div>
+      <div className="dish-detail-botonera-confirm" style={borrando||confirmation?{}:{opacity:"0"}}>
+          {borrando
+            && <div className="dish-detail-mensaje-botones">
+              <p style={{color:"rgb(134, 24, 24)"}}>Está seguro que quiere borrar este menu?</p>
+              <div style={{display:"flex", gap:"15px"}}>
+                <button className="dish-detail-botones-footer eraser dish-detail-botoncicos" onClick={handleDelete}>Si</button>
+                <button className="dish-detail-botones-footer dish-detail-botoncicos" onClick={handleConfirmation}>No</button>
+              </div>
+            </div>
+            }
+
+
+{/* <div className="dishes-pastilla-footer">
+
+<button>Precio: {menu.precio} €</button>
+
+
+
+<button onClick={handleConfirmation}>🗑️</button>
+{borrando
+&& <><p>Está seguro de que quiere borrar este menú?</p>
+<button onClick={handleDelete}>Si</button>
+<button onClick={handleConfirmation}>No</button></>
+}
+</div> */}
+      
+    </div> 
+   
+      </div>
+
   )
 }
 

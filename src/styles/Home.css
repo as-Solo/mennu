@@ -20,18 +20,19 @@
     padding:5px;
     margin:0;
     font-weight: 700;
-    width: 60%;
     margin: 15px;
-    margin-left: 10%;
     border-radius: 20px;
   }
 
   hr {
-
     margin: 0;
   }
 
-
+.title-cont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @media (min-width: 1024px) {
   .categoria-container {
@@ -51,4 +52,10 @@
   .precio {
     text-align: right;
   }
+  .title-cont{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+
 }

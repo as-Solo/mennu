@@ -115,13 +115,14 @@ width: 100%;
 
 }
 .add-dish-link::before {
-  content: "Nuevo Plato";
+  content: "Crear Plato";
 }
 .add-menu-link::before {
-  content: "Nuevo Menu";
+  content: "Crear Menu";
 }
 .navbar-brand {
   width:50%;
+  padding-left:0;
 }
 
 .navbar-brand img {

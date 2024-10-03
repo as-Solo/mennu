@@ -59,7 +59,9 @@ function Home() {
       </div>
 
       <div className="categoria-container verde">
+        <div className="title-cont">
         <h1 className="amarillo categ-title">Entrantes</h1>
+        </div>
         <hr />
 
         <Carousel>
@@ -73,7 +75,10 @@ function Home() {
     </div>
 
       <div className="categoria-container amarillo">
+      <div className="title-cont">
+
         <h1 className="verde categ-title">Carnes</h1>
+        </div>
         <hr />
         <Carousel>
         {carnes.map(dish => (
@@ -85,7 +90,10 @@ function Home() {
       </div>
 
       <div className="categoria-container verde">
+      <div className="title-cont">
+
         <h1 className="amarillo categ-title">Pescados</h1>
+        </div>
         <hr />
         <Carousel>
         {pescados.map(dish => (
@@ -99,7 +107,10 @@ function Home() {
       </div>
 
       <div className="categoria-container amarillo">
+      <div className="title-cont">
+
         <h1 className="verde categ-title">Ensaladas</h1>
+        </div>
         <hr />
         <Carousel>
         {ensaladas.map(dish => (
@@ -112,7 +123,10 @@ function Home() {
       </div>
 
       <div className="categoria-container verde">
+      <div className="title-cont">
+
         <h1 className="amarillo categ-title">Pizzas</h1>
+        </div>
         <hr />
         <Carousel>
         {pizzas.map(dish => (
@@ -124,7 +138,10 @@ function Home() {
       </div>
       
       <div className="categoria-container amarillo">
+      <div className="title-cont">
+
         <h1 className="verde categ-title">Hamburguesas</h1>
+        </div>
         <hr />
         <Carousel>
         {hamburguesas.map(dish => (
@@ -136,7 +153,10 @@ function Home() {
       </div>
 
       <div className="categoria-container verde">
+      <div className="title-cont">
+
         <h1 className="amarillo categ-title">Postres</h1>
+        </div>
         <hr />
         <Carousel>
         {postres.map(dish => (
