@@ -215,8 +215,10 @@ const handleCreate = async ()=>{
             <label className="add-dish-label-descripcion" htmlFor="descripcion">Descripcion<super>*</super></label>
             <textarea className="add-dish-text-descripcion" onChange={(e)=>handleObject(e)} type="text" name="descripcion"/>
           </div>
-
-            <button disabled={showMessage} onClick={handleCreate} style={{position:"absolute", bottom:"20px", borderRadius:"30px"}}>CREAR</button>
+          
+          <div className="add-dish-boton-footer">
+            <button disabled={showMessage} onClick={handleCreate} style={{borderRadius:"30px"}}>CREAR</button>
+          </div>
       </div>
       <div className="mensajes-creacion" style={showMessage?{opacity:"1"}:{}}>
         <div className="pastilla-mensaje">
