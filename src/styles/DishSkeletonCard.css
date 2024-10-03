@@ -1,7 +1,16 @@
+.supercontainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    /* border: 1px solid red; */
+    overflow: hidden;
+}
 .card-skeleton{
     width: 100%;
     /* border: 1px red solid; */
-    height: 100%;
+    height: 58%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +20,7 @@
 
 .skeleton-container{
     border: 1px solid grey;
-    width: 85%;
+    width: 95%;
     height: 260px;
     max-width: 1140px;
     border-radius: 15px;
@@ -86,4 +95,22 @@
 .skeleton-5a-linea{
     width: 20%;
     height: 15%;
+}
+
+.tope-superior{
+    height: 40px;
+}
+
+@media (width < 1123px){
+    .tope-superior{
+        display: none;
+    }
+}
+
+@media (width <= 600px){
+    .card-skeleton{height: 12%; width: 85%;}
+}
+
+@media (width > 600px){
+    .card-skel-3{display: none;}
 }

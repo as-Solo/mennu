@@ -15,7 +15,7 @@ function Dishes() {
   const [filters, setFilters] = useState({nombre:'', descripcion:'', categoria:'', categoriaMenu:'', isGlutenFree:null, isVegan:null, precio:0, rating:0})
   const [variantes, setVariantes] = useState({precioVar:'', ratingVar:''})
   const [ascendant, setAscendant] = useState(true)
-  const [orderBy, setOrderBy] = useState('nombre')
+  const [orderBy, setOrderBy] = useState('')
   const [isTyping, setIsTyping] = useState(null)
 
   const createQuery = ()=>{
@@ -107,23 +107,13 @@ function Dishes() {
     return ()=>{}
   }, [])
   const paraDishFilter = {handleInputsText, handleInputs, handleInputsVariantes, handleInputsOrder, handleInputsAscDesc, orderBy, ascendant, filters}
-
-
-  // if (data === null){
-  //   return (
-  //   <>
-  //     <DishSkeletonCard/>
-  //     <DishSkeletonCard/>
-  //   </>
-  // )
-  // }
   
   return (
     <div className="dishes-container">
       <DishFilters {...paraDishFilter}/>
       {data===null
       ? <>
-      <DishSkeletonCard/>
+      {/* <div className="tope-superior"></div> */}
       <DishSkeletonCard/>
       </>
       :<div className="centradito">
