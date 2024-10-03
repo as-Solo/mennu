@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 // import "../styles/prueba.css"
 import "../styles/Dishes.css"
 import DishFilters from "../components/DishFilters"
-
+import DishSkeletonCard from "../components/DishSkeletonCard"
 
 function Dishes() {
   const redirect = useNavigate()
@@ -109,14 +109,24 @@ function Dishes() {
   const paraDishFilter = {handleInputsText, handleInputs, handleInputsVariantes, handleInputsOrder, handleInputsAscDesc, orderBy, ascendant, filters}
 
 
-  if (data === null){
-    return <h1>...loading</h1>
-  }
+  // if (data === null){
+  //   return (
+  //   <>
+  //     <DishSkeletonCard/>
+  //     <DishSkeletonCard/>
+  //   </>
+  // )
+  // }
   
   return (
     <div className="dishes-container">
       <DishFilters {...paraDishFilter}/>
-      <div className="centradito">
+      {data===null
+      ? <>
+      <DishSkeletonCard/>
+      <DishSkeletonCard/>
+      </>
+      :<div className="centradito">
         <div className="dishes-fichas-container">
           {data.map(dish=>{
             return(
@@ -127,7 +137,7 @@ function Dishes() {
         </div>
         <button className="dishes-add-dish" onClick={()=>redirect('/add-dish')}>Crear plato</button>
         <div className="dishes-pastilla-footer"></div>
-      </div>
+      </div>}
     </div>
   )
 }
