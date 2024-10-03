@@ -16,6 +16,8 @@ function AddMenuForm() {
   const [primeros, setPrimeros] = useState([])
   const [segundos, setSegundos] = useState([])
   const [postres, setPostres] = useState([])
+  const [showMessage, setShowMessage] = useState(false)
+
   // ------------------------------------------------------------
 
   // ------------------  PETICIONES A LA API  -------------------
@@ -110,6 +112,8 @@ function AddMenuForm() {
     }
     else{
       console.log("mensajito de por que algo no ha salido")
+      setShowMessage(true)
+      setTimeout(()=>setShowMessage(false), 2500)
     }
   }
   // ------------------------------------------------------------
@@ -220,8 +224,13 @@ function AddMenuForm() {
       
       <div className="tope-inferior">
         <button onClick={()=>redirect("/menus")} className="boton-volver">⤺</button>
-        <button onClick={handleAddMenu} className="boton-add-menu">Añadir</button>
+        <button disabled={showMessage} onClick={handleAddMenu} className="boton-add-menu">Añadir</button>
       </div>
+      <div className="mensajes-creacion" style={showMessage?{opacity:"1"}:{}}>
+        <div className="pastilla-mensaje">
+          <p>No se ha creado el plato.</p>
+          <p>Recuerda añadir los campos requeridos correctamente</p>
+        </div></div>
     </div>
     </div>
   )

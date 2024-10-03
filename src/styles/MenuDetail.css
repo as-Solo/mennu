@@ -57,23 +57,41 @@
 #platos-menu{
 background-color: rgb(231,164,69,0.1);
 padding-top:2vw;
-padding-bottom:16vw;
+
 
 }
 
 .super {
-  max-height: 88vh; 
+  max-height: 70vh; 
   overflow-y: hidden; 
+  width: 100%;
 }
 
 .dishes-container-menu p{
   margin : 0;
 }
+.menu-details-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 @media(width > 1024px){
+  .menu-details-info{
+   
+    align-items: flex-start;
+    justify-content: flex-start;
+   /*  padding: 2vw; <-- esto si queremos que se alinee con el primer plato en vez de con la caja*/ 
 
+  }
   .super{
+    
+    display: flex;
+
     align-items:flex-start;
+    margin:0;
+    align-content: flex-start;
   }
   .dishes-container-menu{
     align-items: flex-start;
@@ -91,7 +109,7 @@ padding-bottom:16vw;
 
   }
   .plato h1 {
-    margin -top:1vh;
+    margin-top:1vh;
   }
   .plato {
     height : 40vh;

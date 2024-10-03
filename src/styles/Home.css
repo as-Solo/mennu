@@ -1,3 +1,36 @@
+.landing-div{
+  display: flex;
+  align-items: center;
+  text-align: right;
+  max-width: 1200px;
+  transition: height 1s ease;
+
+}
+
+.landing-div h5 {
+  font-weight: 700;
+  border: 1px solid rgb(231,164,69);
+  display: inline;
+  padding: 1vw 2vw;
+  border-radius: 20px;
+
+  
+}
+
+
+.landing-div img{
+  max-width: 50%;
+}
+.restaurant-info{
+
+}
+.landing-div div {
+  padding-left: 3vw;
+}
+
+.landing-div p {
+  margin:0;
+}
 .verde {
   background-color: rgb(125,140,42) ;
   color:white;
@@ -9,10 +42,13 @@
   color:white;
   }
   .categ-title{
-    width: 50%;
+    min-width: 50%;
   }
   .categoria-container {
     margin: 0;
+    width: 100%;
+    display: flex; 
+    justify-content: center;
 
   }
   .categoria-container h1{
@@ -20,7 +56,7 @@
     padding:5px;
     margin:0;
     font-weight: 700;
-    margin: 15px;
+
     border-radius: 20px;
   }
 
@@ -32,6 +68,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
+}
+
+#hamb-title {
+
+}
+.carousel-item img {
+  width: 100%; 
+  height: auto;
 }
 
 @media (min-width: 1024px) {
@@ -40,6 +85,22 @@
     border-radius: 20px;
 
   }
+  .restaurant-info{
+    min-width: 50%;
+    font-size: 2em;
+  }
+  .landing-div {
+    width: 100%;
+    max-width: 1200px;
+  }
+  .landing-div h5 {
+    font-size: 2em;
+  }
+
+  .direccion-telefono{
+    margin-top: 2vw;
+  }
+  
   .categoria-container h1{
     display: inline;
     width: 30%;
