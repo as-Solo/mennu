@@ -3,6 +3,7 @@ import fotoLanding from "../assets/HomeImage.png"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Carousel from 'react-bootstrap/Carousel';
+import { useLocation } from "react-router-dom";
  
 
 
@@ -21,6 +22,8 @@ function Home() {
   const [pizzas, setPizzas] = useState(null)
   const [hamburguesas, setHamburguesas] = useState(null)
   const [postres, setPostres] = useState(null)
+
+  const location = useLocation()
 
   const getRows = async()=>{
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes`)
@@ -161,7 +164,7 @@ function Home() {
         <Carousel>
         {postres.map(dish => (
           <Carousel.Item key={dish.id}>
-           <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
+           <DishCard dish={dish} key={dish.id} data={data} setData={setData} state={{desde:location.pathname}}/>
           </Carousel.Item>
         ))}
       </Carousel>

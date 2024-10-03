@@ -8,7 +8,7 @@ function DishCard(props) {
 
     
 
-        <Link to={`/dishes/dish-detail/${dish.id}`} className="dish-card">
+        <Link to={`/dishes/dish-detail/${dish.id}`} className="dish-card" state={{desde:"/"}}>
           <div className="rel-container">
             <img src={dish.image} alt={dish.nombre}/>
            
