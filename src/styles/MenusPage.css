@@ -73,14 +73,13 @@
 
 
   .menu-container{
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
-
-    height : 30vw;
+    align-items: center; 
     flex-shrink: 0;
-
+    gap: 1vw;
     
   }
 
@@ -91,14 +90,10 @@
     padding:0.5vw
   }    
   .menu-container p {
-    margin-left: 3vw;
+    margin: 0;
   }
   .menus-container {
-    display:flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    margin: auto;
-    gap: 1vw;
+  
   }
 
 }
