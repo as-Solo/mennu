@@ -1,0 +1,116 @@
+.supercontainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    /* border: 1px solid red; */
+    overflow: hidden;
+}
+.card-skeleton{
+    width: 100%;
+    /* border: 1px red solid; */
+    height: 58%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.skeleton-container{
+    border: 1px solid grey;
+    width: 95%;
+    height: 260px;
+    max-width: 1140px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+
+}
+.skeleton-foto{
+    width: 45%;
+    height: 100%;
+    background-color: rgb(210, 210, 210);
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.253);
+    transition: all 1s;
+}
+
+.skeleton-datos{
+    width: 55%;
+    height: 100%;
+    border: grey 1px solid;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.linea{
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.253);
+    background-color: rgb(210, 210, 210);
+    transition: all 1s;
+    border-radius: 20px;
+    /* height: 10%;
+    width: 100%; */
+}
+
+.skeleton-1a-linea{
+    width:35%;
+    height: 17%;
+}
+.skeleton-2a-linea{
+    width: 45%;
+    height: 13%;
+}
+
+.skeleton-3a-linea{
+    width: 95%;
+    height: 35%;
+}
+
+.skeleton-div4-linea{
+    display: flex;
+    width: 45%;
+    height: 10%;
+    gap: 5px;
+}
+.skeleton-4a-linea{
+    width: 50%;
+    height: 100%;
+}
+.skeleton-4b-linea{
+    width: 50%;
+    height: 100%;
+}
+
+
+
+.skeleton-5a-linea{
+    width: 20%;
+    height: 15%;
+}
+
+.tope-superior{
+    height: 40px;
+}
+
+@media (width < 1123px){
+    .tope-superior{
+        display: none;
+    }
+}
+
+@media (width <= 600px){
+    .card-skeleton{height: 12%; width: 85%;}
+}
+
+@media (width > 600px){
+    .card-skel-3{display: none;}
+}

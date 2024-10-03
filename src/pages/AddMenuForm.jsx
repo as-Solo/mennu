@@ -162,7 +162,7 @@ function AddMenuForm() {
             return (
               <div className="platos-incluidos" key={plato.id}>
                 <p style={{margin:"0"}}>{plato.nombre}</p>
-                <button onClick={(e)=>removeIncludePrimeros(e)} name={plato.id} style={{ padding:"1x", lineHeight:".8rem" }}>x</button>
+                <button className="add-menu-boton-delete" onClick={(e)=>removeIncludePrimeros(e)} name={plato.id} style={{ padding:"1x", lineHeight:".8rem" }}>x</button>
               </div>
             )
           })}
@@ -189,7 +189,7 @@ function AddMenuForm() {
           return (
             <div className="platos-incluidos" key={plato.id}>
               <p style={{margin:"0"}}>{plato.nombre}</p>
-              <button onClick={(e)=>removeIncludeSegundos(e)} name={plato.id} style={{ padding:"1x", lineHeight:".8rem" }}>x</button>
+              <button className="add-menu-boton-delete" onClick={(e)=>removeIncludeSegundos(e)} name={plato.id} style={{ padding:"1x", lineHeight:".8rem" }}>x</button>
             </div>
           )
         })}
@@ -215,7 +215,7 @@ function AddMenuForm() {
             return (
               <div className="platos-incluidos" key={plato.id}>
                 <p style={{margin:"0"}}>{plato.nombre}</p>
-                <button onClick={(e)=>removeIncludePostres(e)} name={plato.id} style={{ padding:"1x", lineHeight:".8rem" }}>x</button>
+                <button className="add-menu-boton-delete" onClick={(e)=>removeIncludePostres(e)} name={plato.id} style={{ padding:"1x", lineHeight:".8rem" }}>x</button>
               </div>
             )
           })}

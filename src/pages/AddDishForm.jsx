@@ -81,19 +81,6 @@ const handleObjectCheck = (e)=>{
   setNewDish(clone)
 }
 
-// const handleObjectText = (e)=>{
-//   if (isTyping){
-//     clearTimeout(isTyping)
-//   }
-//   setIsTyping( setTimeout(()=>{
-//     let clone = structuredClone(newDish)
-//     clone[e.target.name] = e.target.value
-//     setNewDish(clone)
-//   }, 800) )
-// } deprecated
-
-
-
 const handleCreate = async ()=>{
   if (
     newDish.nombre && 

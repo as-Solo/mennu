@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom"
 
 
 
@@ -14,7 +14,7 @@ function MenuDetail() {
 
   const [borrando, setBorrando] = useState(false)
 
-
+  const location = useLocation()
 
   const handleDelete = async()=>{
 
@@ -64,7 +64,7 @@ function MenuDetail() {
           {menu.dishes
             .filter((dish) => dish.categoriaMenu === "primeros")
             .map((dish) => (
-              <Link key={dish.id} to={`/dishes/dish-detail/${dish.id}`}>
+              <Link key={dish.id} to={`/dishes/dish-detail/${dish.id}`} state={{desde:location.pathname}}>
                 <div key={dish.id} className="plato">
                   <h5>{dish.nombre}</h5>
                   <p>{dish.descripcion}</p>
@@ -83,7 +83,7 @@ function MenuDetail() {
           {menu.dishes
             .filter((dish) => dish.categoriaMenu === "segundos")
             .map((dish) => (
-              <Link key={dish.id} to={`/dishes/dish-detail/${dish.id}`}>
+              <Link key={dish.id} to={`/dishes/dish-detail/${dish.id}`} state={{desde:location.pathname}}>
                 <div key={dish.id} className="plato">
                   <h5>{dish.nombre}</h5>
                   <p>{dish.descripcion}</p>
@@ -103,7 +103,7 @@ function MenuDetail() {
           {menu.dishes
             .filter((dish) => dish.categoriaMenu === "postres")
             .map((dish) => (
-              <Link key={dish.id} to={`/dishes/dish-detail/${dish.id}`}>
+              <Link key={dish.id} to={`/dishes/dish-detail/${dish.id}`} state={{desde:location.pathname}}>
                 <div key={dish.id} className="plato">
                   <h5>{dish.nombre}</h5>
                   <p>{dish.descripcion}</p>

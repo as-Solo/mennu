@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useLocation, useNavigate, useParams } from "react-router-dom"
 // import "../styles/prueba.css"
 import "../styles/DishDetail.css"
 import "../styles/AddDishForm.css"
@@ -16,7 +16,7 @@ function DishDetail() {
   // const {getData} = props // deprecated este momento
   const redirect = useNavigate()
   const {dishId} = useParams()
-
+  const location = useLocation()
   // ------------------------ STATES ------------------------------
   const [dish, setDish] = useState(null)
   const [categorias, setCategorias] = useState([])
@@ -122,7 +122,7 @@ function DishDetail() {
     <div className="dish-detail-god-container">
       <div className="dish-detail-container">
         <div className="dish-detail-boton-volver-container">
-          <button onClick={()=>redirect('/dishes')} className="dish-detail-boton-volver">⤺</button>
+          <button onClick={location.state?.desde?()=>redirect(location.state.desde):()=>redirect('/dishes')} className="dish-detail-boton-volver">⤺</button>
         </div>
         <div className="dish-detail-image-precio-flotante-container">
           <div className="container-flotante-rotate">
@@ -187,11 +187,12 @@ function DishDetail() {
             : <div><p className="dish-detail-etiqueta-nombre">{dish.nombre}</p><hr className="subrayado-nombre"/></div>
             }
           </div>
-          <div className="dish-detail-vegan-gluten-container" style={editando?{justifyContent:"center"}:{}}>
+          <div className="dish-detail-vegan-gluten-container" style={editando?{justifyContent:"space-evenly"}:{}}>
+            
             {editando
-            ? <div>
-                <div className="add-dish-check-container">
-                  <label htmlFor="isVegan" className="add-dish-label-chexkbox">Es vegano</label>
+            ? <div className="dish-detail-check-width">
+                <div className="add-dish-check-container dish-detail-check-label">
+                  <label htmlFor="isVegan" className="add-dish-label-chexkbox">{editDish.isVegan?'Es vegano':'No vegano'}</label>
                   <div className="add-dish-chexbox-text" style={editDish.isVegan?{backgroundColor:"rgb(125, 140, 42, .2)", borderColor:"rgb(125, 140, 42)"}:{}}>
                     <div className="pelotica-checkbox" style={editDish.isVegan?{left:"9px", backgroundColor:"rgb(125, 140, 42)"}:{}}></div>
                     <input onChange={(e)=>handleInputsChecks(e)} style={{position:"absolute", opacity:"0"}} type="checkbox" name="isVegan" checked={editDish.isVegan}/>
@@ -205,15 +206,15 @@ function DishDetail() {
             }
 
             {editando
-              ? <div>
-                <div className="add-dish-check-container">
-                  <label htmlFor="isGlutenFree" className="add-dish-label-chexkbox">Sin gluten</label>
+              ? <div className="dish-detail-check-width">
+                  <div className="add-dish-check-container dish-detail-check-label">
+                    <label htmlFor="isGlutenFree" className="add-dish-label-chexkbox ">{editDish.isGlutenFree?'Sin gluten':'Con gluten'}</label>
                     <div className="add-dish-chexbox-text" style={editDish.isGlutenFree?{backgroundColor:"rgb(125, 140, 42, .2)", borderColor:"rgb(125, 140, 42)"}:{}}>
                       <div className="pelotica-checkbox" style={editDish.isGlutenFree?{left:"9px", backgroundColor:"rgb(125, 140, 42)"}:{}}></div>
                       <input onChange={(e)=>handleInputsChecks(e)} style={{position:"absolute", opacity:"0"}} type="checkbox" name="isGlutenFree" checked={editDish.isGlutenFree}/>
                     </div>
                   </div>
-                </div>
+                </div>  
               :<div>{dish.isGlutenFree
                 ? <img className="logos-veganos" src={gluten_free} alt="logo gluten_free" />
                 : <img className="logos-veganos" src={no_gluten_free} alt="logo no_gluten_free" />}

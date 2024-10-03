@@ -123,6 +123,7 @@ function DishFilters(props) {
         <hr />
         <div style={{display:"flex", alignItems:"center", gap:"5px"}}>
           <select className="form-dish-select" onChange={(e)=>handleInputsOrder(e)} name="orderBy" id="" value={orderBy}>
+            <option value={''}>-- Ordenar por</option>
             <option value="nombre">Nombre</option>
             <option value="descripcion">Descripcion</option>
             <option value="isVegan">Veganos</option>
