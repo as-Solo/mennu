@@ -217,7 +217,7 @@ const handleCreate = async ()=>{
           </div>
           
           <div className="add-dish-boton-footer">
-            <button disabled={showMessage} onClick={handleCreate} style={{borderRadius:"30px"}}>CREAR</button>
+            <button disabled={showMessage} onClick={handleCreate} style={{borderRadius:"30px"}}>Añadir</button>
           </div>
       </div>
       <div className="mensajes-creacion" style={showMessage?{opacity:"1"}:{}}>
