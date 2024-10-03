@@ -102,9 +102,6 @@ function Home() {
   }, [imgRed]);
 
 
-
-  const location = useLocation()
-
   const getRows = async()=>{
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes`)
     const dishes = response.data
@@ -257,7 +254,7 @@ function Home() {
         <Carousel>
         {postres.map(dish => (
           <Carousel.Item key={dish.id}>
-           <DishCard dish={dish} key={dish.id} data={data} setData={setData} state={{desde:location.pathname}}/>
+           <DishCard dish={dish} key={dish.id} data={data} setData={setData}/>
           </Carousel.Item>
         ))}
       </Carousel>
