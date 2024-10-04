@@ -12,6 +12,8 @@
 
 ### Sobre el Desarrollo
 
+#### [Wireframes](https://excalidraw.com/#room=7f9a5edefa009c0d434f,ebb-nSUV9R23sPcDuOS_0g)
+
 Este proyecto fue desarrollado como una herramienta interna para la gestión de menús de restaurantes, enfocándose en la simplicidad y eficiencia a través del uso de tecnologías modernas. **Mennu** permite a los administradores gestionar la carta de su restaurante en tiempo real, organizando platos según atributos clave como nombre, precio, categoría y más.
 
 ### Collaborators
