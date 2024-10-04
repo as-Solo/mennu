@@ -113,7 +113,7 @@ function Home() {
     setHamburguesas(dishes.filter(elem=>elem.categoria.toLowerCase()==="hamburguesas"))
     setPostres(dishes.filter(elem=>elem.categoria.toLowerCase()==="postres"))
     setData(dishes)
-    // console.log(data)
+
   }
 
   

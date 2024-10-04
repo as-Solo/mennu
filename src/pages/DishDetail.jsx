@@ -31,7 +31,7 @@ function DishDetail() {
   // -------------------- PETICIONES A API ------------------------
   const getDish = async()=>{
     const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/dishes/${dishId}`)
-    // console.log(response.data)
+
     setDish(response.data)
     setEditDish(response.data)
   }
@@ -65,7 +65,7 @@ function DishDetail() {
 
   // ------------------------ HANDLES ------------------------------
   const handleDelete = async()=>{
-    console.log(`Se ha borrado ${dish.nombre} de la carta.`)
+
     await axios.delete(`${import.meta.env.VITE_SERVER_URL}/dishes/${dishId}`)
     redirect('/dishes')
     setBorrando(!borrando)
@@ -114,7 +114,7 @@ function DishDetail() {
     fontSize: ".7rem",
   }
 
-  // console.log(editDish)
+
   if (dish === null){
     return (<h1>...loading</h1>)
   }

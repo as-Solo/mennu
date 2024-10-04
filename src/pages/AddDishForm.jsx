@@ -92,12 +92,9 @@ const handleCreate = async ()=>{
     newDish.rating
     ){
     const platoNuevo = await axios.post(`${import.meta.env.VITE_SERVER_URL}/dishes`, newDish)
-    console.log(`Se ha añadido ${platoNuevo.data.nombre} a la carta`)
     redirect(`/dishes/dish-detail/${platoNuevo.data.id}`)
     }
     else{
-      console.log("Aqui vendria una ventanita explicativa de por qué no se ha añadido nada")
-      console.log(newDish)
       setShowMessage(true)
       setTimeout(()=>setShowMessage(false), 2500)
     }

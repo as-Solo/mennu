@@ -98,20 +98,20 @@ function AddMenuForm() {
       let id = response.data.id
       for (let elem of primerosInclude){
         await axios.patch(`${import.meta.env.VITE_SERVER_URL}/dishes/${elem.id}`, {menuId:id})
-        console.log(elem)
+
       }
       for (let elem of segundosInclude){
         await axios.patch(`${import.meta.env.VITE_SERVER_URL}/dishes/${elem.id}`, {menuId:id})
-        console.log(elem)
+
       }
       for (let elem of postresInclude){
         await axios.patch(`${import.meta.env.VITE_SERVER_URL}/dishes/${elem.id}`, {menuId:id})
-        console.log(elem)
+
       }
       redirect("/menus")
     }
     else{
-      console.log("mensajito de por que algo no ha salido")
+
       setShowMessage(true)
       setTimeout(()=>setShowMessage(false), 2500)
     }

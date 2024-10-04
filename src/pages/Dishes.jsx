@@ -47,7 +47,7 @@ function Dishes() {
     if(orderBy){
       queryStr += `&_sort=${orderBy}&_order=${ascendant?'asc':'desc'}`
     }
-    // console.log(queryStr)
+
     setQuery(queryStr)
   }
 
@@ -66,13 +66,13 @@ function Dishes() {
   }
 
   const handleInputsAscDesc = (e)=>{
-    // console.log(e.target.checked)
+
     setAscendant(e.target.checked)
   }
 
   const handleInputsOrder = (e)=>{
     e.preventDefault()
-    console.log(e.target.value)
+
     setOrderBy(e.target.value)
   }
 
