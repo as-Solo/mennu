@@ -140,6 +140,19 @@
     align-items: center;
 }
 
+.check-ascendant-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(74, 42, 24);
+    border: 2px solid rgb(125, 140, 42);
+    background-color: rgba(125, 140, 42, 0.2);
+    width: 19px;
+    height: 19px;
+    border-radius: 3px;
+    position: relative;
+}
+
 @media(width >= 718px){
     .boton-mas-filtros{
         display: none;

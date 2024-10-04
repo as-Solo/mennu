@@ -131,7 +131,10 @@ function DishFilters(props) {
             <option value="precio">Precio</option>
             <option value="rating">Puntuacion</option>
           </select>
-          <input onChange={(e)=>handleInputsAscDesc(e)} type="checkbox" name="isAscendant" value={ascendant}/>
+          <div className="check-ascendant-container">
+            <input onChange={(e)=>handleInputsAscDesc(e)} type="checkbox" name="isAscendant" value={ascendant} style={{position:"absolute", opacity:"0"}}/>
+            <p style={{margin:0}}>{ascendant?'⇵':'⇅'}</p>
+          </div>
         </div>
         <div className="boton-mas-filtros">
           <p style={{margin:"0", padding:"0"}}>{checked?'🠉':'🠋'}</p>
