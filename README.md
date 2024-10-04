@@ -4,11 +4,11 @@
 
 **Mennu** es una aplicación web diseñada para facilitar la gestión de menús y platos en un restaurante. Los usuarios pueden añadir, modificar, filtrar y visualizar menús y platos de manera eficiente. Además, la aplicación ofrece un sistema dinámico para organizar estos elementos según diversas categorías, proporcionando una experiencia simple y amigable para los administradores de restaurantes.
 
-[MENNU](https://mennu-ih.netlify.app/)
+[Mennu](https://mennu-ih.netlify.app/)
 
-[Investiga el codigo](https://github.com/as-Solo/mennu)
+- [Investiga el codigo](https://github.com/as-Solo/mennu)
 
-[Servidor js](https://github.com/as-Solo/mennu-api)
+- [Servidor js](https://github.com/as-Solo/mennu-api)
 
 ### Sobre el Desarrollo
 
