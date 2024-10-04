@@ -47,7 +47,7 @@ function MenuDetail() {
       <div className="dishes-container dishes-container-menu" >
       <div className="menu-details-info">
       <div className="redirect" id="redirect">
-      <button onClick={()=>redirect('/menus')}>⤺</button>
+      <button onClick={()=>redirect('/menus')} className="dish-detail-boton-volver">⤺</button>
       </div>
 
       <h1>Menú {menu.nombre}</h1>

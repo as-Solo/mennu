@@ -12,6 +12,7 @@ import AddMenuForm from "./pages/AddMenuForm"
 import AddDishForm from "./pages/AddDishForm"
 import { useState } from 'react';
 import MyNavBar from './components/MyNavBar';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path={'/dishes/dish-detail/:dishId'} element={ <DishDetail/> }/>
           <Route path={'/add-menu'} element={ <AddMenuForm/> }/>
           <Route path={'/add-dish'} element={ <AddDishForm/> }/>
+          <Route path={'*'} element={<NotFound/>}></Route>
         </Routes>
     </>
   )
