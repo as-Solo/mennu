@@ -54,6 +54,7 @@
     margin: 0px;
     padding: 0 10px 0 5px;
     line-height: .9rem;
+    border-radius: 30px;
 }
 .add-dish-text-input{
     outline: none;

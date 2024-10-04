@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useLocation, useNavigate, useParams } from "react-router-dom"
-// import "../styles/prueba.css"
 import "../styles/DishDetail.css"
 import "../styles/AddDishForm.css"
 import starsEmpty from "../assets/stars_empty.png"
@@ -13,7 +12,7 @@ import no_gluten_free from "../assets/no_gluten_free.png"
 
 function DishDetail() {
 
-  // const {getData} = props // deprecated este momento
+
   const redirect = useNavigate()
   const {dishId} = useParams()
   const location = useLocation()
@@ -126,6 +125,11 @@ function DishDetail() {
         </div>
         <div className="dish-detail-image-precio-flotante-container">
           <div className="container-flotante-rotate">
+            { editando &&
+            <div className="add-dish-text-input-container" style={{position:"absolute", zIndex:"50", backgroundColor:"white", transform:"rotate(8deg)", borderRadius:"30px"}}>
+              <label className="add-dish-text-label" style={editDish.image?styleLabel:{}}htmlFor="image">URL image</label>
+              <input className="add-dish-text-input" onChange={(e)=>handleInputs(e)} type="text" name="image" value={editDish.image}/>
+            </div>}
             <img className="dish-detail-image" src={editando?"https://www.shutterstock.com/image-photo/portrait-chef-man-cap-kitchen-600nw-2276188823.jpg":dish.image} alt={`foto de ${dish.nombre}`}/>
             {editando
             ?<div className=" pegatina-precio">
@@ -141,21 +145,17 @@ function DishDetail() {
           <div className="dish-detail-categoria-rating">
             {editando
             ? 
-            // <div className="add-dish-categorias-container">
-              <div className="add-dish-select-container">
-                  <label className="add-dish-label-select" htmlFor="categoria" >categoria</label>
-                  <select className="add-dish-text-select" onChange={(e)=>handleInputs(e)} name="categoria" id="categoria" value={editDish.categoria}>
-                    <option value="" style={{fontStyle:"italic", fontSize:".9rem"}}>--No seleccionada--</option>
-                    {categorias.map((dato, index)=>{
-                      return (
-                      <option key={index} value={dato} name={dato}>{dato}</option>
-                    )
-                    })}
-                  </select>
-              </div>
-            // </div>
-
-
+            <div className="add-dish-select-container">
+                <label className="add-dish-label-select" htmlFor="categoria" >categoria</label>
+                <select className="add-dish-text-select" onChange={(e)=>handleInputs(e)} name="categoria" id="categoria" value={editDish.categoria}>
+                  <option value="" style={{fontStyle:"italic", fontSize:".9rem"}}>--No seleccionada--</option>
+                  {categorias.map((dato, index)=>{
+                    return (
+                    <option key={index} value={dato} name={dato}>{dato}</option>
+                  )
+                  })}
+                </select>
+            </div>
             :<p className="dish-detail-etiqueta-precio">{dish.categoria}</p>}
 
             {editando
@@ -235,7 +235,6 @@ function DishDetail() {
        
       </div>
       <div className="dish-detail-botonera-footer">
-          {/* BOTON DE BORRAR CON PREGUNTITA */}
           <button className="dish-detail-botones-footer eraser" onClick={handleConfirmation}>Borrar</button>
           {editando
             ? <button className="dish-detail-botones-footer" onClick={handleEditConfirmation} style={{backgroundColor:"rgb(125, 140,42)"}}>Guardar cambios</button>
@@ -250,9 +249,7 @@ function DishDetail() {
                 <button className="dish-detail-botones-footer dish-detail-botoncicos" onClick={handleConfirmation}>No</button>
               </div>
             </div>
-            }
-            {/* BOTON DINAMICO DE EDICION/SALVAR CAMBIOS */}
-           
+            }           
             { confirmation&&
               <div className="dish-detail-mensaje-botones">
                 <p>Está seguro que quiere estos cambios?</p>
