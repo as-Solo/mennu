@@ -4,15 +4,13 @@
 
 **Mennu** es una aplicación web diseñada para facilitar la gestión de menús y platos en un restaurante. Los usuarios pueden añadir, modificar, filtrar y visualizar menús y platos de manera eficiente. Además, la aplicación ofrece un sistema dinámico para organizar estos elementos según diversas categorías, proporcionando una experiencia simple y amigable para los administradores de restaurantes.
 
-[Mennu](https://mennu-ih.netlify.app/)
+[MENNU](https://mennu-ih.netlify.app/)
 
 [Investiga el codigo](https://github.com/as-Solo/mennu)
 
 [Servidor js](https://github.com/as-Solo/mennu-api)
 
 ### Sobre el Desarrollo
-
-#### [Wireframes](https://excalidraw.com/#room=7f9a5edefa009c0d434f,ebb-nSUV9R23sPcDuOS_0g)
 
 Este proyecto fue desarrollado como una herramienta interna para la gestión de menús de restaurantes, enfocándose en la simplicidad y eficiencia a través del uso de tecnologías modernas. **Mennu** permite a los administradores gestionar la carta de su restaurante en tiempo real, organizando platos según atributos clave como nombre, precio, categoría y más.
 
@@ -53,7 +51,7 @@ Este proyecto fue desarrollado como una herramienta interna para la gestión de 
     ## React Router Routes (React App)
     | Path                      | Page            | Components | Behavior |
     | ------------------------- | ----------------| ----------------  |  ------------------------------------------------------------  |
-    | `/` | Home |                | Página de inicio|
+    | `/` | Home | DishCard | Página de inicio|
     | `/dishes` | Dishes | DishCardItem, DishFilters, DishSkeletonCard | Muestra la carta del restaurante con todos los platos que hay en ella |
     | `/menus` | Menus | MenuFilter | Muestra todos los menus creados|
     | `/menus/menu-detail/:menuId` | MenuDetail | | Muestra el menu seleccionado y todo su contenido |
@@ -62,8 +60,6 @@ Este proyecto fue desarrollado como una herramienta interna para la gestión de 
     | `/add-dish` | AddDishForm   |  | Permite crear de cero un plato nuevo |
 
     ## Otros Componentes
-
-    - Navbar
     - MyNavBar
     - DishCard
     - MenuCard
