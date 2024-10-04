@@ -25,7 +25,6 @@ function DishFilters(props) {
   const handleMoreFilters = (e)=>{
     setChecked(e.target.checked)
     if (e.target.checked){
-      // console.log(screenWidth)
       if(screenWidth >=620){
         setMorefilters("140px")
       }
@@ -40,7 +39,6 @@ function DishFilters(props) {
         setMorefilters("100px")
       }
   }
-  // console.log(moreFilters)
   const labelStyle = {fontSize: '.7rem',
     left: "20px",
     top: "-4px",

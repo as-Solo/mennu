@@ -9,7 +9,6 @@ function Navbar() {
   return (
     <div className="navbar-container">
       <div className="Navbar">
-        {/* <img src={logoAmarillo} alt="" /> */}
         <Link
         to={"/"}>
         <img src={logoTeja} alt="" />

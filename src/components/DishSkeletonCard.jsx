@@ -17,7 +17,6 @@ const loopStyle = {
     backgroundColor: "rgb(170, 170, 170)"
 }
 
-console.log(chivatoLoop)
   return (
     <div className="supercontainer">
       <div className="card-skeleton">

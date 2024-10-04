@@ -27,13 +27,10 @@ function MyNavBar() {
             <img src={logoTeja} alt="logo" />
           </Navbar.Brand>
         </Link>
-
-        {/* Botón de menú hamburguesa */}
         <Navbar.Toggle 
         aria-controls="basic-navbar-nav"
         onClick={toggleMenu}
         >
-          {/* <img src={menuHamb} alt="menu hamburguesa" /> */}
           <div className={`hamburger-menu ${isToggled ? "change" : ""}`}>
             <div className="bar1"></div>
             <div className="bar2"></div>
@@ -41,17 +38,7 @@ function MyNavBar() {
           </div>
         </Navbar.Toggle>
         </div>
-        {/* Contenido colapsable */}
         <Navbar.Collapse id="basic-navbar-nav">
-          
-           {/*  <Link
-            to="/">Home</Link>
-            <Link
-            to="/dishes">Carta</Link>
-            <Link
-            to="/menus">Menus</Link>
-             */}
-
             <Nav className="d-flex" variant="tabs" defaultActiveKey="/">
             <Nav.Link 
               as={Link} 
@@ -89,12 +76,9 @@ function MyNavBar() {
               active={location.pathname === '/add-menu'}
               className="add-menu-link"
             >
-              
             </Nav.Link>
           </Nav>
-         
         </Navbar.Collapse>
-
     </Navbar>
   )
 }

@@ -32,8 +32,6 @@ function DishCardItem(props) {
               <hr className='separador'/>
               <p className="item-descripcion-web"> {dish.descripcion}</p>
               <div className='item-iconos'>
-                {/* <img className={"item-icono-img"} src={dish.isGlutenFree?glutenFree:noGlutenFree} alt="" />
-                <img className={"item-icono-img"} src={dish.isVegan?vegan:noVegan} alt="" /> */}
                 <p style={dish.isGlutenFree?{color:"rgb(231, 164, 69)"}:{color:"rgb(210, 210, 210)"}}>{dish.isGlutenFree?"Sin Gluten":"Con Gluten"}</p> {/*🌽*/}
                 <p style={dish.isVegan?{color:"rgb(125, 140, 42)"}:{color:"rgb(210, 210, 210)"}}>{dish.isVegan?"Vegano":"No Vegano"}</p> {/*🍃*/}
               </div>
