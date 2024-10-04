@@ -3,9 +3,6 @@ import fotoLanding from "../assets/HomeImage.png"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Carousel from 'react-bootstrap/Carousel';
-import { useLocation } from "react-router-dom";
- 
-
 
 function Home() {
 
@@ -23,7 +20,6 @@ function Home() {
   const [hamburguesas, setHamburguesas] = useState(null)
   const [postres, setPostres] = useState(null)
   const [imgRed, setImgRed] = useState(false)
-  const [imgRed2, setImgRed2] = useState(false)
 
   const [styleLanding, setStyleLanding] = useState({
     backgroundColor:"white", height:"90vh"
